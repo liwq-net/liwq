@@ -36,9 +36,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="cocos2d-xna\actions\action\CCAction.cs" />
-    <Compile Include="cocos2d-xna\actions\action\CCFiniteTimeAction.cs" />
-    <Compile Include="cocos2d-xna\actions\action\CCFollow.cs" />
+    <Compile Include="cocos2d-xna\_liwq\actions\action\CCAction.cs" />
+    <Compile Include="cocos2d-xna\_liwq\actions\action\CCFiniteTimeAction.cs" />
+    <Compile Include="cocos2d-xna\_liwq\actions\action\CCFollow.cs" />
     <Compile Include="cocos2d-xna\actions\action\CCSpeed.cs" />
     <Compile Include="cocos2d-xna\actions\action_camera\CCActionCamera.cs" />
     <Compile Include="cocos2d-xna\actions\action_camera\CCOrbitCamera.cs" />
@@ -144,7 +144,6 @@
     <Compile Include="cocos2d-xna\_liwq\Director.cs" />
     <Compile Include="cocos2d-xna\CCScheduler.cs" />
     <Compile Include="cocos2d-xna\cocoa\CCAffineTransform.cs" />
-    <Compile Include="cocos2d-xna\cocoa\CCGeometry.cs" />
     <Compile Include="cocos2d-xna\cocoa\CCObject.cs" />
     <Compile Include="cocos2d-xna\cocoa\CCZone.cs" />
     <Compile Include="cocos2d-xna\effects\CCGrabber.cs" />
@@ -186,7 +185,6 @@
     <Compile Include="cocos2d-xna\layers_scenes_transitions_nodes\transition\CCTransitionZoomFlipY.cs" />
     <Compile Include="cocos2d-xna\layers_scenes_transitions_nodes\transition\ICCTransitionEaseScene.cs" />
     <Compile Include="cocos2d-xna\_liwq\Application.cs" />
-    <Compile Include="cocos2d-xna\platform\CCLog.cs" />
     <Compile Include="cocos2d-xna\platform\OGLES.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -213,6 +211,9 @@
     </Compile>
     <Compile Include="cocos2d-xna\_liwq\PngDecoder.cs" />
     <Compile Include="cocos2d-xna\_liwq\Sprite.cs" />
+    <Compile Include="cocos2d-xna\_liwq\sturcts\CCRect.cs" />
+    <Compile Include="cocos2d-xna\_liwq\sturcts\CCSize.cs" />
+    <Compile Include="cocos2d-xna\_liwq\sturcts\CCUtils.cs" />
     <Compile Include="cocos2d-xna\_liwq\Texture.cs" />
     <Compile Include="cocos2d-xna\textures\CCTextureAtlas.cs" />
     <Compile Include="cocos2d-xna\textures\CCTextureCache.cs" />
@@ -251,6 +252,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cocos2d-xna\_liwq\sturcts\CCPoint.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cocos2d-xna\_liwq\actions\action_camera\" />
+    <Folder Include="cocos2d-xna\_liwq\actions\action_ease\" />
+    <Folder Include="cocos2d-xna\_liwq\actions\action_grid3d\" />
+    <Folder Include="cocos2d-xna\_liwq\actions\action_grid\" />
+    <Folder Include="cocos2d-xna\_liwq\actions\action_instants\" />
+    <Folder Include="cocos2d-xna\_liwq\actions\action_intervals\" />
+    <Folder Include="cocos2d-xna\_liwq\actions\action_tiled_grid\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

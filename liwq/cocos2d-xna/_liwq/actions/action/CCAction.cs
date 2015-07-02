@@ -1,23 +1,18 @@
 using System;
 using System.Diagnostics;
+
 namespace cocos2d
 {
-    /// <summary>
-    /// @brief Base class for CCAction objects.
-    /// </summary>
     public class CCAction : CCObject
     {
         public const int INVALID_ACTION_TAGB = -1;
 
-        /// <summary>The action tag. An identifier of the action</summary>
+        /// <summary>
+        /// The action tag. An identifier of the action
+        /// </summary>
         public int Tag { get; set; }
 
         public CCAction() { this.Tag = INVALID_ACTION_TAGB; }
-
-        //public object Clone() { return new CCAction() { Tag = this.Tag }; }
-
-        /// <summary>return true if the action has finished</summary>
-        public virtual bool IsDone() { return true; }
 
         /// <summary>
         /// The "target".
@@ -29,14 +24,15 @@ namespace cocos2d
 
         /// <summary>
         /// Set the original target, since target can be nil.
-        /// Is the target that were used to run the action. Unless you are doing something complex, like CCActionManager, you should NOT call this method.
+        /// Is the target that were used to run the action. 
+        /// Unless you are doing something complex, like CCActionManager, you should NOT call this method.
         /// The target is 'assigned', it is not 'retained'.
-        /// @since v0.8.2
         /// </summary>
         public Node Target { get; set; }
 
         /// <summary>
-        /// called before the action start. It will also set the target.
+        /// called before the action start. 
+        /// It will also set the target.
         /// </summary>
         public virtual void StartWithTarget(Node target)
         {
@@ -53,10 +49,13 @@ namespace cocos2d
             this.Target = null;
         }
 
-        /// <summary>called every frame with it's delta time. DON'T override unless you know what you are doing.</summary>
+        /// <summary>
+        /// called every frame with it's delta time.
+        /// DON'T override unless you know what you are doing.
+        /// </summary>
         public virtual void Step(float dt)
         {
-            CCLog.Log("[Action step]. override me");
+            Debug.WriteLine("[Action step]. override me");
         }
 
         /// <summary>
@@ -68,8 +67,11 @@ namespace cocos2d
         /// </summary>
         public virtual void Update(float dt)
         {
-            CCLog.Log("[Action update]. override me");
+            Debug.WriteLine("[Action update]. override me");
         }
+
+        /// <summary>return true if the action has finished</summary>
+        public virtual bool IsDone() { return true; }
 
     }
 }

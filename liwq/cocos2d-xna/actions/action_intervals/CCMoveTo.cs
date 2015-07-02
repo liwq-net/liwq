@@ -1,3 +1,4 @@
+using liwq;
 namespace cocos2d
 {
     /** @brief Moves a CCNode object to the position x,y. x and y are absolute coordinates by modifying it's position attribute.*/
@@ -46,8 +47,8 @@ namespace cocos2d
         {
             if (Target != null)
             {
-                Target.Position = CCPointExtension.ccp(m_startPosition.x + m_delta.x * dt,
-                    m_startPosition.y + m_delta.y * dt);
+                Target.Position = CCPointExtension.ccp(m_startPosition.X + m_delta.X * dt,
+                    m_startPosition.Y + m_delta.Y * dt);
             }
         }
 

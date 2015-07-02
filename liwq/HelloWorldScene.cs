@@ -1,4 +1,5 @@
 using cocos2d;
+using liwq;
 using System.Collections.Generic;
 
 namespace HelloCocos2d

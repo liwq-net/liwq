@@ -1,7 +1,5 @@
+using liwq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace cocos2d
 {
@@ -66,17 +64,17 @@ namespace cocos2d
             }
 
             CCPoint step = Target.Grid.Step;
-            coords.bl.x += (int)(t.position.x * step.x);
-            coords.bl.y += (int)(t.position.y * step.y);
+            coords.bl.x += (int)(t.position.X * step.X);
+            coords.bl.y += (int)(t.position.Y * step.Y);
 
-            coords.br.x += (int)(t.position.x * step.x);
-            coords.br.y += (int)(t.position.y * step.y);
+            coords.br.x += (int)(t.position.X * step.X);
+            coords.br.y += (int)(t.position.Y * step.Y);
 
-            coords.tl.x += (int)(t.position.x * step.x);
-            coords.tl.y += (int)(t.position.y * step.y);
+            coords.tl.x += (int)(t.position.X * step.X);
+            coords.tl.y += (int)(t.position.Y * step.Y);
 
-            coords.tr.x += (int)(t.position.x * step.x);
-            coords.tr.y += (int)(t.position.y * step.y);
+            coords.tr.x += (int)(t.position.X * step.X);
+            coords.tr.y += (int)(t.position.Y * step.Y);
 
             setTile(x, y, coords);
         }

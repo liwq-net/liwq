@@ -1,3 +1,4 @@
+using liwq;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -291,7 +292,7 @@ namespace cocos2d
             Node child = this.GetChildByTag(tag);
             if (child == null)
             {
-                CCLog.Log("removeChildByTag: child not found!");
+                System.Diagnostics.Debug.WriteLine("removeChildByTag: child not found!");
             }
             else
             {
@@ -520,14 +521,14 @@ namespace cocos2d
             // XXX: Expensive calls. Camera should be integrated into the cached affine matrix
             if (this._camera != null && !(this.Grid != null && this.Grid.Active))
             {
-                bool translate = (this.AnchorPointInPixels.x != 0.0f || this.AnchorPointInPixels.y != 0.0f);
+                bool translate = (this.AnchorPointInPixels.X != 0.0f || this.AnchorPointInPixels.Y != 0.0f);
 
                 Matrix? matrix = this._camera.locate();
                 if (matrix != null)
                 {
-                    this._nodeTransform = Matrix.CreateTranslation(-AnchorPointInPixels.x, -AnchorPointInPixels.y, 0) *
+                    this._nodeTransform = Matrix.CreateTranslation(-AnchorPointInPixels.X, -AnchorPointInPixels.Y, 0) *
                         matrix.Value *
-                        Matrix.CreateTranslation(AnchorPointInPixels.x, AnchorPointInPixels.y, 0) *
+                        Matrix.CreateTranslation(AnchorPointInPixels.X, AnchorPointInPixels.Y, 0) *
                         this._nodeTransform;
                 }
             }
@@ -774,12 +775,12 @@ namespace cocos2d
 
                 if (!IsRelativeAnchorPoint && !AnchorPointInPixels.IsZero)
                 {
-                    _transform = CCAffineTransform.CCAffineTransformTranslate(_transform, AnchorPointInPixels.x, AnchorPointInPixels.y);
+                    _transform = CCAffineTransform.CCAffineTransformTranslate(_transform, AnchorPointInPixels.X, AnchorPointInPixels.Y);
                 }
 
                 if (!_positionInPixels.IsZero)
                 {
-                    _transform = CCAffineTransform.CCAffineTransformTranslate(_transform, _positionInPixels.x, _positionInPixels.y);
+                    _transform = CCAffineTransform.CCAffineTransformTranslate(_transform, _positionInPixels.X, _positionInPixels.Y);
                 }
 
                 if (_rotation != 0f)
@@ -804,7 +805,7 @@ namespace cocos2d
 
                 if (!AnchorPointInPixels.IsZero)
                 {
-                    _transform = CCAffineTransform.CCAffineTransformTranslate(_transform, -AnchorPointInPixels.x, -AnchorPointInPixels.y);
+                    _transform = CCAffineTransform.CCAffineTransformTranslate(_transform, -AnchorPointInPixels.X, -AnchorPointInPixels.Y);
                 }
 
                 _isTransformDirty = false;
@@ -1062,12 +1063,12 @@ namespace cocos2d
             }
             set
             {
-                if (CCPoint.CCPointEqualToPoint(value, this._anchorPoint) == false)
+                if (value.Equals(this._anchorPoint) == false)
                 {
                     this._anchorPoint = value;
                     this.AnchorPointInPixels = CCPointExtension.ccp(
-                        this._contentSizeInPixels.Width * this._anchorPoint.x,
-                        this._contentSizeInPixels.Height * this._anchorPoint.y
+                        this._contentSizeInPixels.Width * this._anchorPoint.X,
+                        this._contentSizeInPixels.Height * this._anchorPoint.Y
                         );
                     this._makeTransformDirty();
                 }
@@ -1100,8 +1101,8 @@ namespace cocos2d
                     this._contentSizeInPixels = this._contentSize;
 
                     this.AnchorPointInPixels = CCPointExtension.ccp(
-                        this._contentSizeInPixels.Width * this._anchorPoint.x,
-                        this._contentSizeInPixels.Height * this._anchorPoint.y
+                        this._contentSizeInPixels.Width * this._anchorPoint.X,
+                        this._contentSizeInPixels.Height * this._anchorPoint.Y
                         );
                     this._makeTransformDirty();
                 }
@@ -1124,8 +1125,8 @@ namespace cocos2d
                     this._contentSizeInPixels = value;
                     this._contentSize = value;
                     AnchorPointInPixels = CCPointExtension.ccp(
-                        this._contentSizeInPixels.Width * this._anchorPoint.x,
-                        this._contentSizeInPixels.Height * this._anchorPoint.y
+                        this._contentSizeInPixels.Width * this._anchorPoint.X,
+                        this._contentSizeInPixels.Height * this._anchorPoint.Y
                         );
                     this._makeTransformDirty();
                 }

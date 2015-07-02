@@ -1,3 +1,4 @@
+using liwq;
 /****************************************************************************
 Copyright (c) 2010-2012 cocos2d-x.org
 Copyright (c) 2008-2010 Ricardo Quesada
@@ -83,7 +84,7 @@ namespace cocos2d
             Texture pTexture = CCTextureCache.sharedTextureCache().addImage(pszFileName);
             //CCRect rect = CCRectZero;
             CCRect rect = new CCRect(0, 0, 0, 0);
-            rect.size = pTexture.ContentSize;
+            rect.Size = pTexture.ContentSize;
             CCSpriteFrame pFrame = CCSpriteFrame.frameWithTexture(pTexture, rect);
             //// m_pobFrames.addObject(pFrame);
             m_pobFrames.Add(pFrame);

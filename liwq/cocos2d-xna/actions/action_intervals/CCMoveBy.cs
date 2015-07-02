@@ -1,4 +1,5 @@
 
+using liwq;
 namespace cocos2d
 {
     /** @brief Moves a CCNode object x,y pixels by modifying it's position attribute.
@@ -53,7 +54,7 @@ namespace cocos2d
 
         public override CCFiniteTimeAction Reverse()
         {
-            return CCMoveBy.actionWithDuration(Duration, CCPointExtension.ccp(-m_delta.x, -m_delta.y));
+            return CCMoveBy.actionWithDuration(Duration, CCPointExtension.ccp(-m_delta.X, -m_delta.Y));
         }
 
         public static new CCMoveBy actionWithDuration(float duration, CCPoint position)

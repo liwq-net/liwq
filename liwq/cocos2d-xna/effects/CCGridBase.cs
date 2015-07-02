@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using liwq;
 
 namespace cocos2d
 {
@@ -106,8 +107,8 @@ namespace cocos2d
 
             CCSize texSize = m_pTexture.ContentSize;
             m_obStep = new CCPoint();
-            m_obStep.x = texSize.Width / (float)m_sGridSize.x;
-            m_obStep.y = texSize.Height / (float)m_sGridSize.y;
+            m_obStep.X = texSize.Width / (float)m_sGridSize.x;
+            m_obStep.Y = texSize.Height / (float)m_sGridSize.y;
 
             m_pGrabber = new CCGrabber();
             if (m_pGrabber != null)
@@ -137,7 +138,7 @@ namespace cocos2d
 
             if (pTexture == null)
             {
-                CCLog.Log("cocos2d: CCGrid: error creating texture");
+                System.Diagnostics.Debug.WriteLine("cocos2d: CCGrid: error creating texture");
                 return false;
             }
 

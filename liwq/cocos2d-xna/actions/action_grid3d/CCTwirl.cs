@@ -1,3 +1,4 @@
+using liwq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,8 @@ namespace cocos2d
         public void setPosition(CCPoint position)
         {
             m_position = position;
-            m_positionInPixels.x = position.x * Director.SharedDirector.ContentScaleFactor;
-            m_positionInPixels.y = position.y * Director.SharedDirector.ContentScaleFactor;
+            m_positionInPixels.X = position.X * Director.SharedDirector.ContentScaleFactor;
+            m_positionInPixels.Y = position.Y * Director.SharedDirector.ContentScaleFactor;
         }
 
         public float getAmplitude()
@@ -101,18 +102,18 @@ namespace cocos2d
                     ccVertex3F v = originalVertex(new ccGridSize(i, j));
 
                     CCPoint avg = new CCPoint(i - (m_sGridSize.x / 2.0f), j - (m_sGridSize.y / 2.0f));
-                    float r = (float)Math.Sqrt((avg.x * avg.x + avg.y * avg.y));
+                    float r = (float)Math.Sqrt((avg.X * avg.X + avg.Y * avg.Y));
 
                     float amp = 0.1f * m_fAmplitude * m_fAmplitudeRate;
                     float a = r * (float)Math.Cos((float)Math.PI / 2.0f + time * (float)Math.PI * m_nTwirls * 2) * amp;
 
                     CCPoint d = new CCPoint();
 
-                    d.x = (float)Math.Sin(a) * (v.y - c.y) + (float)Math.Cos(a) * (v.x - c.x);
-                    d.y = (float)Math.Cos(a) * (v.y - c.y) - (float)Math.Sin(a) * (v.x - c.x);
+                    d.X = (float)Math.Sin(a) * (v.y - c.Y) + (float)Math.Cos(a) * (v.x - c.X);
+                    d.Y = (float)Math.Cos(a) * (v.y - c.Y) - (float)Math.Sin(a) * (v.x - c.X);
 
-                    v.x = c.x + d.x;
-                    v.y = c.y + d.y;
+                    v.x = c.X + d.X;
+                    v.y = c.Y + d.Y;
 
                     setVertex(new ccGridSize(i, j), v);
                 }

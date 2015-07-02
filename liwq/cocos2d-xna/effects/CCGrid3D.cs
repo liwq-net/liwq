@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using liwq;
 
 namespace cocos2d
 {
@@ -120,7 +121,7 @@ namespace cocos2d
             {
                 VertexPositionColorTexture vct = new VertexPositionColorTexture();
                 vct.Position = new Vector3(m_pVertices[i].x, m_pVertices[i].y, m_pVertices[i].z);
-                vct.TextureCoordinate = new Vector2(m_pTexCoordinates[i].x, m_pTexCoordinates[i].y);
+                vct.TextureCoordinate = new Vector2(m_pTexCoordinates[i].X, m_pTexCoordinates[i].Y);
                 vct.Color = Color.White;
                 vertices.Add(vct);
             }
@@ -169,10 +170,10 @@ namespace cocos2d
                 {
                     int idx = (y * m_sGridSize.x) + x;
 
-                    float x1 = x * m_obStep.x;
-                    float x2 = x1 + m_obStep.x;
-                    float y1 = y * m_obStep.y;
-                    float y2 = y1 + m_obStep.y;
+                    float x1 = x * m_obStep.X;
+                    float x2 = x1 + m_obStep.X;
+                    float y1 = y * m_obStep.Y;
+                    float y2 = y1 + m_obStep.Y;
 
                     int a = x * (m_sGridSize.y + 1) + y;
                     int b = (x + 1) * (m_sGridSize.y + 1) + y;
@@ -207,14 +208,14 @@ namespace cocos2d
                         vertArray[l1[i]].z = l2[i].z;
 
                         texArray[tex1[i]] = new CCPoint();
-                        texArray[tex1[i]].x = tex2[i].x / width;
+                        texArray[tex1[i]].X = tex2[i].X / width;
                         if (m_bIsTextureFlipped)
                         {
-                            texArray[tex1[i]].y = tex2[i].y / height;
+                            texArray[tex1[i]].Y = tex2[i].Y / height;
                         }
                         else
                         {
-                            texArray[tex1[i]].y = (imageH - tex2[i].y) / height;
+                            texArray[tex1[i]].Y = (imageH - tex2[i].Y) / height;
                         }
                     }
                 }

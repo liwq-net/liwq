@@ -23,6 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
+using liwq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,11 +56,11 @@ namespace cocos2d
 
         public void setPosition(CCPoint pos)
         {
-            if (!CCPoint.CCPointEqualToPoint(pos, m_position))
+            if (!pos.Equals(m_position))
             {
                 m_position = pos;
-                m_positionInPixels.x = pos.x * Director.SharedDirector.ContentScaleFactor;
-                m_positionInPixels.y = pos.y * Director.SharedDirector.ContentScaleFactor;
+                m_positionInPixels.X = pos.X * Director.SharedDirector.ContentScaleFactor;
+                m_positionInPixels.Y = pos.Y * Director.SharedDirector.ContentScaleFactor;
                 m_bDirty = true;
             }
         }
@@ -118,7 +119,7 @@ namespace cocos2d
                     for (j = 0; j < m_sGridSize.y + 1; ++j)
                     {
                         ccVertex3F v = originalVertex(new ccGridSize(i, j));
-                        CCPoint vect = new CCPoint(m_positionInPixels.x - new CCPoint(v.x, v.y).x, m_positionInPixels.y - new CCPoint(v.x, v.y).y);
+                        CCPoint vect = new CCPoint(m_positionInPixels.X - new CCPoint(v.x, v.y).X, m_positionInPixels.Y - new CCPoint(v.x, v.y).Y);
                         float r = CCPointExtension.ccpLength(vect);
 
                         if (r < m_fRadius)
@@ -133,7 +134,7 @@ namespace cocos2d
                             float l = (float)Math.Log(pre_log) * m_fLensEffect;
                             float new_r = (float)Math.Exp(l) * m_fRadius;
 
-                            if (Math.Sqrt((vect.x * vect.x + vect.y * vect.y)) > 0)
+                            if (Math.Sqrt((vect.X * vect.X + vect.Y * vect.Y)) > 0)
                             {
                                 vect = CCPointExtension.ccpNormalize(vect);
 

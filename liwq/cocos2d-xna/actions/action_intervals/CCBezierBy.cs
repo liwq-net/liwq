@@ -23,6 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
+using liwq;
 using System;
 namespace cocos2d
 {
@@ -77,14 +78,14 @@ namespace cocos2d
             if (Target != null)
             {
                 float xa = 0;
-                float xb = m_sConfig.controlPoint_1.x;
-                float xc = m_sConfig.controlPoint_2.x;
-                float xd = m_sConfig.endPosition.x;
+                float xb = m_sConfig.controlPoint_1.X;
+                float xc = m_sConfig.controlPoint_2.X;
+                float xd = m_sConfig.endPosition.X;
 
                 float ya = 0;
-                float yb = m_sConfig.controlPoint_1.y;
-                float yc = m_sConfig.controlPoint_2.y;
-                float yd = m_sConfig.endPosition.y;
+                float yb = m_sConfig.controlPoint_1.Y;
+                float yc = m_sConfig.controlPoint_2.Y;
+                float yd = m_sConfig.endPosition.Y;
 
                 float x = bezierat(xa, xb, xc, xd, dt);
                 float y = bezierat(ya, yb, yc, yd, dt);

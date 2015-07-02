@@ -282,7 +282,7 @@ namespace cocos2d
                 {
                     if (selector == timer.m_pfnSelector)
                     {
-                        CCLog.Log("CCSheduler#scheduleSelector. Selector already scheduled.");
+                        System.Diagnostics.Debug.WriteLine("CCSheduler#scheduleSelector. Selector already scheduled.");
                         timer.m_fInterval = fInterval;
                         return;
                     }

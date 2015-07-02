@@ -1,5 +1,6 @@
 using System;
 using Microsoft.Xna.Framework.Graphics;
+using liwq;
 namespace cocos2d
 {
     public class ccMacros

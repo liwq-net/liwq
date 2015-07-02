@@ -23,6 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
+using liwq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +45,7 @@ namespace cocos2d
                 return 1.0f;
             }
 
-            return (float)Math.Pow(n.y / pos.y, 6);
+            return (float)Math.Pow(n.Y / pos.y, 6);
         }
 
         /// <summary>

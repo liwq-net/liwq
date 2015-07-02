@@ -5,6 +5,7 @@ using System.Text;
 
 
 using Microsoft.Xna.Framework;
+using liwq;
 
 namespace cocos2d
 {
@@ -171,12 +172,12 @@ namespace cocos2d
                 return;
 
             double c = Math.Sqrt(2.0);
-            CCPoint u = new CCPoint(m_AlongVector.x / h, m_AlongVector.y / h);
+            CCPoint u = new CCPoint(m_AlongVector.X / h, m_AlongVector.Y / h);
 
             // Compressed Interpolation mode
             if (m_bCompressedInterpolation)
             {
-                float h2 = 1 / (Math.Abs(u.x) + Math.Abs(u.y));
+                float h2 = 1 / (Math.Abs(u.X) + Math.Abs(u.Y));
                 u = CCPointExtension.ccpMult(u, h2 * (float)c);
             }
 
@@ -199,25 +200,25 @@ namespace cocos2d
             };
 
             // (-1, -1)
-            m_pSquareColors[0].r = (byte)(E.r + (S.r - E.r) * ((c + u.x + u.y) / (2.0f * c)));
-            m_pSquareColors[0].g = (byte)(E.g + (S.g - E.g) * ((c + u.x + u.y) / (2.0f * c)));
-            m_pSquareColors[0].b = (byte)(E.b + (S.b - E.b) * ((c + u.x + u.y) / (2.0f * c)));
-            m_pSquareColors[0].a = (byte)(E.a + (S.a - E.a) * ((c + u.x + u.y) / (2.0f * c)));
+            m_pSquareColors[0].r = (byte)(E.r + (S.r - E.r) * ((c + u.X + u.Y) / (2.0f * c)));
+            m_pSquareColors[0].g = (byte)(E.g + (S.g - E.g) * ((c + u.X + u.Y) / (2.0f * c)));
+            m_pSquareColors[0].b = (byte)(E.b + (S.b - E.b) * ((c + u.X + u.Y) / (2.0f * c)));
+            m_pSquareColors[0].a = (byte)(E.a + (S.a - E.a) * ((c + u.X + u.Y) / (2.0f * c)));
             // (1, -1)
-            m_pSquareColors[1].r = (byte)(E.r + (S.r - E.r) * ((c - u.x + u.y) / (2.0f * c)));
-            m_pSquareColors[1].g = (byte)(E.g + (S.g - E.g) * ((c - u.x + u.y) / (2.0f * c)));
-            m_pSquareColors[1].b = (byte)(E.b + (S.b - E.b) * ((c - u.x + u.y) / (2.0f * c)));
-            m_pSquareColors[1].a = (byte)(E.a + (S.a - E.a) * ((c - u.x + u.y) / (2.0f * c)));
+            m_pSquareColors[1].r = (byte)(E.r + (S.r - E.r) * ((c - u.X + u.Y) / (2.0f * c)));
+            m_pSquareColors[1].g = (byte)(E.g + (S.g - E.g) * ((c - u.X + u.Y) / (2.0f * c)));
+            m_pSquareColors[1].b = (byte)(E.b + (S.b - E.b) * ((c - u.X + u.Y) / (2.0f * c)));
+            m_pSquareColors[1].a = (byte)(E.a + (S.a - E.a) * ((c - u.X + u.Y) / (2.0f * c)));
             // (-1, 1)
-            m_pSquareColors[2].r = (byte)(E.r + (S.r - E.r) * ((c + u.x - u.y) / (2.0f * c)));
-            m_pSquareColors[2].g = (byte)(E.g + (S.g - E.g) * ((c + u.x - u.y) / (2.0f * c)));
-            m_pSquareColors[2].b = (byte)(E.b + (S.b - E.b) * ((c + u.x - u.y) / (2.0f * c)));
-            m_pSquareColors[2].a = (byte)(E.a + (S.a - E.a) * ((c + u.x - u.y) / (2.0f * c)));
+            m_pSquareColors[2].r = (byte)(E.r + (S.r - E.r) * ((c + u.X - u.Y) / (2.0f * c)));
+            m_pSquareColors[2].g = (byte)(E.g + (S.g - E.g) * ((c + u.X - u.Y) / (2.0f * c)));
+            m_pSquareColors[2].b = (byte)(E.b + (S.b - E.b) * ((c + u.X - u.Y) / (2.0f * c)));
+            m_pSquareColors[2].a = (byte)(E.a + (S.a - E.a) * ((c + u.X - u.Y) / (2.0f * c)));
             // (1, 1)
-            m_pSquareColors[3].r = (byte)(E.r + (S.r - E.r) * ((c - u.x - u.y) / (2.0f * c)));
-            m_pSquareColors[3].g = (byte)(E.g + (S.g - E.g) * ((c - u.x - u.y) / (2.0f * c)));
-            m_pSquareColors[3].b = (byte)(E.b + (S.b - E.b) * ((c - u.x - u.y) / (2.0f * c)));
-            m_pSquareColors[3].a = (byte)(E.a + (S.a - E.a) * ((c - u.x - u.y) / (2.0f * c)));
+            m_pSquareColors[3].r = (byte)(E.r + (S.r - E.r) * ((c - u.X - u.Y) / (2.0f * c)));
+            m_pSquareColors[3].g = (byte)(E.g + (S.g - E.g) * ((c - u.X - u.Y) / (2.0f * c)));
+            m_pSquareColors[3].b = (byte)(E.b + (S.b - E.b) * ((c - u.X - u.Y) / (2.0f * c)));
+            m_pSquareColors[3].a = (byte)(E.a + (S.a - E.a) * ((c - u.X - u.Y) / (2.0f * c)));
 
             vertices[0].Color = new Color(m_pSquareColors[0].r, m_pSquareColors[0].g, m_pSquareColors[0].b, m_pSquareColors[0].a);
             vertices[1].Color = new Color(m_pSquareColors[1].r, m_pSquareColors[1].g, m_pSquareColors[1].b, m_pSquareColors[1].a);

@@ -23,6 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
+using liwq;
 namespace cocos2d
 {
     /** @brief Moves a CCNode object to a parabolic position simulating a jump movement by modifying it's position attribute.*/
@@ -39,7 +40,7 @@ namespace cocos2d
         public override void StartWithTarget(Node target)
         {
             base.StartWithTarget(target);
-            m_delta = CCPointExtension.ccp(m_delta.x - m_startPosition.x, m_delta.y - m_startPosition.y);
+            m_delta = CCPointExtension.ccp(m_delta.X - m_startPosition.X, m_delta.Y - m_startPosition.Y);
         }
 
         public override CCObject copyWithZone(CCZone zone)

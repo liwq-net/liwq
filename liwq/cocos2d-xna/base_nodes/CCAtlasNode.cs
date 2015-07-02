@@ -28,6 +28,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using liwq;
 
 namespace cocos2d
 {
@@ -194,7 +195,7 @@ namespace cocos2d
 
             if (m_pTextureAtlas == null)
             {
-                CCLog.Log("cocos2d: Could not initialize CCAtlasNode. Invalid Texture.");
+                System.Diagnostics.Debug.WriteLine("cocos2d: Could not initialize CCAtlasNode. Invalid Texture.");
                 return false;
             }
 

@@ -1,3 +1,4 @@
+using liwq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -121,7 +122,7 @@ namespace cocos2d
         public bool initWithTexture(Texture pobTexture, CCRect rect)
         {
             CCRect rectInPixels = ccMacros.CC_RECT_POINTS_TO_PIXELS(rect);
-            return initWithTexture(pobTexture, rectInPixels, false, new CCPoint(0, 0), rectInPixels.size);
+            return initWithTexture(pobTexture, rectInPixels, false, new CCPoint(0, 0), rectInPixels.Size);
         }
 
         /// <summary>

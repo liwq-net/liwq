@@ -1,32 +1,5 @@
-/****************************************************************************
-Copyright (c) 2010-2012 cocos2d-x.org
-Copyright (c) 2008-2010 Ricardo Quesada
-Copyright (c) 2011 Zynga Inc.
-Copyright (c) 2011-2012 openxlive.com
- 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-****************************************************************************/
-
+using liwq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace cocos2d
 {
@@ -39,12 +12,12 @@ namespace cocos2d
         public virtual float testFunc(ccGridSize pos, float time)
         {
             CCPoint n = new CCPoint((float)(m_sGridSize.x * time), (float)(m_sGridSize.y * time));
-            if ((n.x + n.y) == 0.0f)
+            if ((n.X + n.Y) == 0.0f)
             {
                 return 1.0f;
             }
 
-            return (float)Math.Pow((pos.x + pos.y) / (n.x + n.y), 6);
+            return (float)Math.Pow((pos.x + pos.y) / (n.X + n.Y), 6);
         }
 
         public void turnOnTile(ccGridSize pos)
@@ -68,17 +41,17 @@ namespace cocos2d
             }
             CCPoint step = Target.Grid.Step;
 
-            coords.bl.x += (step.x / 2) * (1.0f - distance);
-            coords.bl.y += (step.y / 2) * (1.0f - distance);
+            coords.bl.x += (step.X / 2) * (1.0f - distance);
+            coords.bl.y += (step.Y / 2) * (1.0f - distance);
 
-            coords.br.x -= (step.x / 2) * (1.0f - distance);
-            coords.br.y += (step.y / 2) * (1.0f - distance);
+            coords.br.x -= (step.X / 2) * (1.0f - distance);
+            coords.br.y += (step.Y / 2) * (1.0f - distance);
 
-            coords.tl.x += (step.x / 2) * (1.0f - distance);
-            coords.tl.y -= (step.y / 2) * (1.0f - distance);
+            coords.tl.x += (step.X / 2) * (1.0f - distance);
+            coords.tl.y -= (step.Y / 2) * (1.0f - distance);
 
-            coords.tr.x -= (step.x / 2) * (1.0f - distance);
-            coords.tr.y -= (step.y / 2) * (1.0f - distance);
+            coords.tr.x -= (step.X / 2) * (1.0f - distance);
+            coords.tr.y -= (step.Y / 2) * (1.0f - distance);
 
             setTile(pos, coords);
         }

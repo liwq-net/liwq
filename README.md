@@ -28,13 +28,13 @@ liwq是一套基于monogame的跨平台框架,同时适用于开发软件或者游戏。
 	
 	public int Add(int count)
 	{
-	    return this._field++;
+		return this._field++;
 	}
 	private int add(int count)
 	{
-	    return this._field++;
+		return this._field++;
 	}
 	static public int Add(int count)
 	{
-	    return Class.Field++;
+		return Class.Field++;
 	}

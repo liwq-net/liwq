@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using liwq;
 
 namespace cocos2d
 {
@@ -185,10 +186,10 @@ namespace cocos2d
             {
                 for (y = 0; y < m_sGridSize.y; y++)
                 {
-                    float x1 = x * m_obStep.x;
-                    float x2 = x1 + m_obStep.x;
-                    float y1 = y * m_obStep.y;
-                    float y2 = y1 + m_obStep.y;
+                    float x1 = x * m_obStep.X;
+                    float x2 = x1 + m_obStep.X;
+                    float y1 = y * m_obStep.Y;
+                    float y2 = y1 + m_obStep.Y;
 
                     vertArray[index] = new ccQuad3();
                     vertArray[index].bl = new ccVertex3F(x1, y1, 0);

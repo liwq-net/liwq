@@ -91,7 +91,7 @@ namespace cocos2d
         {
             if (n >= m_pLayers.Count)
             {
-                CCLog.Log("Invalid index in MultiplexLayer switchTo message");
+                System.Diagnostics.Debug.WriteLine("Invalid index in MultiplexLayer switchTo message");
                 return;
             }
             this.RemoveChild(m_pLayers[(int)m_nEnabledLayer], false);
@@ -105,7 +105,7 @@ namespace cocos2d
         {
             if (n >= m_pLayers.Count)
             {
-                CCLog.Log("Invalid index in MultiplexLayer switchTo message");
+                System.Diagnostics.Debug.WriteLine("Invalid index in MultiplexLayer switchTo message");
                 return;
             }
             this.RemoveChild(m_pLayers[(int)m_nEnabledLayer], true);

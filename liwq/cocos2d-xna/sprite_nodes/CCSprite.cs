@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using liwq;
 namespace cocos2d
 {
     /// <summary>
@@ -858,7 +859,7 @@ namespace cocos2d
             }
 
             CCRect rect = new CCRect();
-            rect.size = texture.ContentSize;
+            rect.Size = texture.ContentSize;
 
             return initWithTexture(texture, rect);
         }
@@ -929,7 +930,7 @@ namespace cocos2d
             if (null != textureFromFile)
             {
                 CCRect rect = new CCRect();
-                rect.size = textureFromFile.ContentSize;
+                rect.Size = textureFromFile.ContentSize;
                 return initWithTexture(textureFromFile, rect);
             }
 
@@ -977,7 +978,7 @@ namespace cocos2d
         {
             if (initWithTexture(batchNode.Texture))
             {
-                setTextureRectInPixels(rect, false, rect.size);
+                setTextureRectInPixels(rect, false, rect.Size);
                 useBatchNode(batchNode);
                 return true;
             }
@@ -1022,7 +1023,7 @@ namespace cocos2d
 
                 matrix = CCAffineTransform.CCAffineTransformMake(c * _scaleX, s * _scaleX,
                     -s * _scaleY, c * _scaleY,
-                    _positionInPixels.x, _positionInPixels.y);
+                    _positionInPixels.X, _positionInPixels.Y);
                 if (_skewX > 0 || _skewY > 0)
                 {
                     CCAffineTransform skewMatrix = CCAffineTransform.CCAffineTransformMake(1.0f, (float)Math.Tan(ccMacros.CC_DEGREES_TO_RADIANS(_skewY)),
@@ -1030,7 +1031,7 @@ namespace cocos2d
                         0.0f, 0.0f);
                     matrix = CCAffineTransform.CCAffineTransformConcat(skewMatrix, matrix);
                 }
-                matrix = CCAffineTransform.CCAffineTransformTranslate(matrix, -AnchorPointInPixels.x, -AnchorPointInPixels.y);
+                matrix = CCAffineTransform.CCAffineTransformTranslate(matrix, -AnchorPointInPixels.X, -AnchorPointInPixels.Y);
             }
             else // parent_ != batchNode_ 
             {
@@ -1062,7 +1063,7 @@ namespace cocos2d
                     // 2nd: Translate, Skew, Rotate, Scale
                     if ((int)prevHonor != 0 & (int)ccHonorParentTransform.CC_HONOR_PARENT_TRANSFORM_TRANSLATE != 0)
                     {
-                        newMatrix = CCAffineTransform.CCAffineTransformTranslate(newMatrix, tv.pos.x, tv.pos.y);
+                        newMatrix = CCAffineTransform.CCAffineTransformTranslate(newMatrix, tv.pos.X, tv.pos.Y);
                     }
 
                     if ((int)prevHonor != 0 & (int)ccHonorParentTransform.CC_HONOR_PARENT_TRANSFORM_ROTATE != 0)
@@ -1073,19 +1074,19 @@ namespace cocos2d
                     if ((int)prevHonor != 0 & (int)ccHonorParentTransform.CC_HONOR_PARENT_TRANSFORM_SKEW != 0)
                     {
                         CCAffineTransform skew = CCAffineTransform.CCAffineTransformMake(1.0f,
-                            (float)Math.Tan(ccMacros.CC_DEGREES_TO_RADIANS(tv.skew.y)),
-                            (float)Math.Tan(ccMacros.CC_DEGREES_TO_RADIANS(tv.skew.x)), 1.0f, 0.0f, 0.0f);
+                            (float)Math.Tan(ccMacros.CC_DEGREES_TO_RADIANS(tv.skew.Y)),
+                            (float)Math.Tan(ccMacros.CC_DEGREES_TO_RADIANS(tv.skew.X)), 1.0f, 0.0f, 0.0f);
                         // apply the skew to the transform
                         newMatrix = CCAffineTransform.CCAffineTransformConcat(skew, newMatrix);
                     }
 
                     if ((int)prevHonor != 0 & (int)ccHonorParentTransform.CC_HONOR_PARENT_TRANSFORM_SCALE != 0)
                     {
-                        newMatrix = CCAffineTransform.CCAffineTransformScale(newMatrix, tv.scale.x, tv.scale.y);
+                        newMatrix = CCAffineTransform.CCAffineTransformScale(newMatrix, tv.scale.X, tv.scale.Y);
                     }
 
                     // 3rd: Translate anchor point
-                    newMatrix = CCAffineTransform.CCAffineTransformTranslate(newMatrix, -tv.ap.x, -tv.ap.y);
+                    newMatrix = CCAffineTransform.CCAffineTransformTranslate(newMatrix, -tv.ap.X, -tv.ap.Y);
 
                     // 4th: Matrix multiplication
                     matrix = CCAffineTransform.CCAffineTransformConcat(matrix, newMatrix);
@@ -1099,10 +1100,10 @@ namespace cocos2d
             //
             // calculate the Quad based on the Affine Matrix
             //
-            CCSize size = m_obRectInPixels.size;
+            CCSize size = m_obRectInPixels.Size;
 
-            float x1 = m_obOffsetPositionInPixels.x;
-            float y1 = m_obOffsetPositionInPixels.y;
+            float x1 = m_obOffsetPositionInPixels.X;
+            float y1 = m_obOffsetPositionInPixels.Y;
 
             float x2 = x1 + size.Width;
             float y2 = y1 + size.Height;
@@ -1147,10 +1148,10 @@ namespace cocos2d
             m_pobBatchNode = null;
             m_bDirty = m_bRecursiveDirty = false;
 
-            float x1 = 0 + m_obOffsetPositionInPixels.x;
-            float y1 = 0 + m_obOffsetPositionInPixels.y;
-            float x2 = x1 + m_obRectInPixels.size.Width;
-            float y2 = y1 + m_obRectInPixels.size.Height;
+            float x1 = 0 + m_obOffsetPositionInPixels.X;
+            float y1 = 0 + m_obOffsetPositionInPixels.Y;
+            float x2 = x1 + m_obRectInPixels.Size.Width;
+            float y2 = y1 + m_obRectInPixels.Size.Height;
             m_sQuad.bl.vertices = ccTypes.vertex3(x1, y1, 0);
             m_sQuad.br.vertices = ccTypes.vertex3(x2, y1, 0);
             m_sQuad.tl.vertices = ccTypes.vertex3(x1, y2, 0);
@@ -1164,7 +1165,7 @@ namespace cocos2d
         {
             CCRect rectInPixels = ccMacros.CC_RECT_POINTS_TO_PIXELS(rect);
             m_obTextureRect = rect;
-            setTextureRectInPixels(rectInPixels, false, rectInPixels.size);
+            setTextureRectInPixels(rectInPixels, false, rectInPixels.Size);
         }
 
         /// <summary>
@@ -1183,15 +1184,15 @@ namespace cocos2d
 
             if (m_bFlipX)
             {
-                relativeOffsetInPixels.x = -relativeOffsetInPixels.x;
+                relativeOffsetInPixels.X = -relativeOffsetInPixels.X;
             }
             if (m_bFlipY)
             {
-                relativeOffsetInPixels.y = -relativeOffsetInPixels.y;
+                relativeOffsetInPixels.Y = -relativeOffsetInPixels.Y;
             }
 
-            m_obOffsetPositionInPixels.x = relativeOffsetInPixels.x + (_contentSizeInPixels.Width - m_obRectInPixels.size.Width) / 2;
-            m_obOffsetPositionInPixels.y = relativeOffsetInPixels.y + (_contentSizeInPixels.Height - m_obRectInPixels.size.Height) / 2;
+            m_obOffsetPositionInPixels.X = relativeOffsetInPixels.X + (_contentSizeInPixels.Width - m_obRectInPixels.Size.Width) / 2;
+            m_obOffsetPositionInPixels.Y = relativeOffsetInPixels.Y + (_contentSizeInPixels.Height - m_obRectInPixels.Size.Height) / 2;
 
             // rendering using batch node
             if (m_bUseBatchNode)
@@ -1204,10 +1205,10 @@ namespace cocos2d
                 // self rendering
 
                 // Atlas: Vertex
-                float x1 = 0 + m_obOffsetPositionInPixels.x;
-                float y1 = 0 + m_obOffsetPositionInPixels.y;
-                float x2 = x1 + m_obRectInPixels.size.Width;
-                float y2 = y1 + m_obRectInPixels.size.Height;
+                float x1 = 0 + m_obOffsetPositionInPixels.X;
+                float y1 = 0 + m_obOffsetPositionInPixels.Y;
+                float x2 = x1 + m_obRectInPixels.Size.Width;
+                float y2 = y1 + m_obRectInPixels.Size.Height;
 
                 // Don't update Z.
                 m_sQuad.bl.vertices = ccTypes.vertex3(x1, y1, 0);
@@ -1267,7 +1268,7 @@ namespace cocos2d
         {
             CCRect r = pFrame.Rect;
 
-            return (CCRect.CCRectEqualToRect(r, m_obRect) && pFrame.Texture.Name == m_pobTexture.Name);
+            return (r.Equals(m_obRect) && pFrame.Texture.Name == m_pobTexture.Name);
         }
 
         #endregion
@@ -1315,10 +1316,10 @@ namespace cocos2d
 		top		= (2*rect.origin.y+1)/(2*atlasHeight);
 		bottom	= top+(rect.size.width*2-2)/(2*atlasHeight);
 #else
-                left = rect.origin.x / atlasWidth;
-                right = left + (rect.size.Height / atlasWidth);
-                top = rect.origin.y / atlasHeight;
-                bottom = top + (rect.size.Width / atlasHeight);
+                left = rect.Origin.X / atlasWidth;
+                right = left + (rect.Size.Height / atlasWidth);
+                top = rect.Origin.Y / atlasHeight;
+                bottom = top + (rect.Size.Width / atlasHeight);
 #endif // CC_FIX_ARTIFACTS_BY_STRECHING_TEXEL
 
                 if (m_bFlipX)
@@ -1348,10 +1349,10 @@ namespace cocos2d
 		top		= (2*rect.origin.y+1)/(2*atlasHeight);
 		bottom	= top + (rect.size.height*2-2)/(2*atlasHeight);
 #else
-                left = rect.origin.x / atlasWidth;
-                right = left + rect.size.Width / atlasWidth;
-                top = rect.origin.y / atlasHeight;
-                bottom = top + rect.size.Height / atlasHeight;
+                left = rect.Origin.X / atlasWidth;
+                right = left + rect.Size.Width / atlasWidth;
+                top = rect.Origin.Y / atlasHeight;
+                bottom = top + rect.Size.Height / atlasHeight;
 #endif // ! CC_FIX_ARTIFACTS_BY_STRECHING_TEXEL
 
                 if (m_bFlipX)
@@ -1398,11 +1399,11 @@ namespace cocos2d
         protected void getTransformValues(transformValues_ tv)
         {
             tv.pos = _positionInPixels;
-            tv.scale.x = _scaleX;
-            tv.scale.y = _scaleY;
+            tv.scale.X = _scaleX;
+            tv.scale.Y = _scaleY;
             tv.rotation = _rotation;
-            tv.skew.x = _skewX;
-            tv.skew.y = _skewY;
+            tv.skew.X = _skewX;
+            tv.skew.Y = _skewY;
             tv.ap = AnchorPointInPixels;
             tv.visible = Visible;
         }

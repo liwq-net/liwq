@@ -1,3 +1,4 @@
+using liwq;
 namespace cocos2d
 {
     public class CCTouch : CCObject
@@ -39,9 +40,9 @@ namespace cocos2d
         public void SetTouchInfo(int nViewId, float x, float y)
         {
             m_nViewId = nViewId;
-            m_prevPoint = new CCPoint(m_point.x, m_point.y);
-            m_point.x = x;
-            m_point.y = y;
+            m_prevPoint = new CCPoint(m_point.X, m_point.Y);
+            m_point.X = x;
+            m_point.Y = y;
         }
     }
 

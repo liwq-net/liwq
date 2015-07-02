@@ -307,7 +307,7 @@ namespace cocos2d
                     }
                     else
                     {
-                        CCLog.Log("ERROR: inconsistent touch handler and delegate found in m_pHandlersToAdd of CCTouchDispatcher");
+                        System.Diagnostics.Debug.WriteLine("ERROR: inconsistent touch handler and delegate found in m_pHandlersToAdd of CCTouchDispatcher");
                     }
                 }
 

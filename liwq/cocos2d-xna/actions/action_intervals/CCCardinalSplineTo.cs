@@ -1,3 +1,4 @@
+using liwq;
 /*
  * Copyright (c) 2010-2012 cocos2d-x.org
  * cocos2d for iPhone: http://www.cocos2d-iphone.org

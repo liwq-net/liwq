@@ -1,5 +1,6 @@
 using System;
 using Microsoft.Xna.Framework;
+using liwq;
 namespace cocos2d
 {
     public class CCAffineTransform
@@ -22,8 +23,8 @@ namespace cocos2d
         public static CCPoint CCPointApplyAffineTransform(CCPoint point, CCAffineTransform t)
         {
             CCPoint p = new CCPoint();
-            p.x = (float)((double)t.a * point.x + (double)t.c * point.y + t.tx);
-            p.y = (float)((double)t.b * point.x + (double)t.d * point.y + t.ty);
+            p.X = (float)((double)t.a * point.X + (double)t.c * point.Y + t.tx);
+            p.Y = (float)((double)t.b * point.X + (double)t.d * point.Y + t.ty);
             return p;
         }
 
@@ -37,20 +38,20 @@ namespace cocos2d
 
         public static CCRect CCRectApplyAffineTransform(CCRect rect, CCAffineTransform anAffineTransform)
         {
-            float top = CCRect.CCRectGetMinY(rect);
-            float left = CCRect.CCRectGetMinX(rect);
-            float right = CCRect.CCRectGetMaxX(rect);
-            float bottom = CCRect.CCRectGetMaxY(rect);
+            float top = rect.MinY;
+            float left = rect.MinX;
+            float right = rect.MaxX;
+            float bottom = rect.MaxY;
 
             CCPoint topLeft = CCPointApplyAffineTransform(new CCPoint(left, top), anAffineTransform);
             CCPoint topRight = CCPointApplyAffineTransform(new CCPoint(right, top), anAffineTransform);
             CCPoint bottomLeft = CCPointApplyAffineTransform(new CCPoint(left, bottom), anAffineTransform);
             CCPoint bottomRight = CCPointApplyAffineTransform(new CCPoint(right, bottom), anAffineTransform);
 
-            float minX = Math.Min(Math.Min(topLeft.x, topRight.x), Math.Min(bottomLeft.x, bottomRight.x));
-            float maxX = Math.Max(Math.Max(topLeft.x, topRight.x), Math.Max(bottomLeft.x, bottomRight.x));
-            float minY = Math.Min(Math.Min(topLeft.y, topRight.y), Math.Min(bottomLeft.y, bottomRight.y));
-            float maxY = Math.Max(Math.Max(topLeft.y, topRight.y), Math.Max(bottomLeft.y, bottomRight.y));
+            float minX = Math.Min(Math.Min(topLeft.X, topRight.X), Math.Min(bottomLeft.X, bottomRight.X));
+            float maxX = Math.Max(Math.Max(topLeft.X, topRight.X), Math.Max(bottomLeft.X, bottomRight.X));
+            float minY = Math.Min(Math.Min(topLeft.Y, topRight.Y), Math.Min(bottomLeft.Y, bottomRight.Y));
+            float maxY = Math.Max(Math.Max(topLeft.Y, topRight.Y), Math.Max(bottomLeft.Y, bottomRight.Y));
 
             return new CCRect(minX, minY, (maxX - minX), (maxY - minY));
         }

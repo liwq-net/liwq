@@ -1,3 +1,4 @@
+using liwq;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -388,7 +389,7 @@ namespace cocos2d
         /// </summary>
         public CCPoint ConvertToGL(CCPoint p)
         {
-            return new CCPoint(p.x, this.DesignSize.Height - p.y);
+            return new CCPoint(p.X, this.DesignSize.Height - p.Y);
         }
 
         //todo ÒÆµ½ccpoint
@@ -398,7 +399,7 @@ namespace cocos2d
         /// </summary>
         public CCPoint ConvertToUI(CCPoint p)
         {
-            return new CCPoint(p.x, this.DesignSize.Height - p.y);
+            return new CCPoint(p.X, this.DesignSize.Height - p.Y);
         }
 
         protected double _animationIntervalPauseBackup;

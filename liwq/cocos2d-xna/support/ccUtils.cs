@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
+using liwq;
 
 namespace cocos2d
 {
@@ -33,8 +34,8 @@ namespace cocos2d
             float b3 = s * (t3 - 2 * t2 + t) + (-2 * t3 + 3 * t2);      // s(t3 - 2 t2 + t)P3 + (-2 t3 + 3 t2)P3
             float b4 = s * (t3 - t2);                                   // s(t3 - t2)P4
 
-            float x = (p0.x * b1 + p1.x * b2 + p2.x * b3 + p3.x * b4);
-            float y = (p0.y * b1 + p1.y * b2 + p2.y * b3 + p3.y * b4);
+            float x = (p0.X * b1 + p1.X * b2 + p2.X * b3 + p3.X * b4);
+            float y = (p0.Y * b1 + p1.Y * b2 + p2.Y * b3 + p3.Y * b4);
 
             return new CCPoint(x, y);
         }

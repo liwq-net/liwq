@@ -60,7 +60,7 @@ namespace cocos2d
 
         ~CCTextureCache()
         {
-            CCLog.Log("cocos2d: deallocing CCTextureCache.");
+            System.Diagnostics.Debug.WriteLine("cocos2d: deallocing CCTextureCache.");
 
             m_pTextures.Clear();
         }
@@ -163,7 +163,7 @@ namespace cocos2d
             }
             catch (ArgumentNullException)
             {
-                CCLog.Log("Texture of key {0} is not exist.", key);
+                System.Diagnostics.Debug.WriteLine("Texture of key {0} is not exist.", key);
             }
 
             return texture;

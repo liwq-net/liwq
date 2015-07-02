@@ -1,3 +1,4 @@
+using System.Diagnostics;
 namespace cocos2d
 {
     public class CCFiniteTimeAction : CCAction
@@ -7,7 +8,6 @@ namespace cocos2d
 
         public virtual CCFiniteTimeAction Reverse()
         {
-            CCLog.Log("cocos2d: FiniteTimeAction#reverse: Implement me");
             return null;
         }
     }

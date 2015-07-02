@@ -23,6 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
+using liwq;
 namespace cocos2d
 {
     public class CCJumpBy : CCActionInterval
@@ -80,15 +81,15 @@ namespace cocos2d
                 // Is % equal to fmodf()???
                 float frac = (dt * m_nJumps) % 1.0f;
                 float y = m_height * 4 * frac * (1 - frac);
-                y += m_delta.y * dt;
-                float x = m_delta.x * dt;
-                Target.Position = CCPointExtension.ccp(m_startPosition.x + x, m_startPosition.y + y);
+                y += m_delta.Y * dt;
+                float x = m_delta.X * dt;
+                Target.Position = CCPointExtension.ccp(m_startPosition.X + x, m_startPosition.Y + y);
             }
         }
 
         public override CCFiniteTimeAction Reverse()
         {
-            return CCJumpBy.actionWithDuration(Duration, CCPointExtension.ccp(-m_delta.x, -m_delta.y), m_height, m_nJumps);
+            return CCJumpBy.actionWithDuration(Duration, CCPointExtension.ccp(-m_delta.X, -m_delta.Y), m_height, m_nJumps);
         }
 
         public static CCJumpBy actionWithDuration(float duration, CCPoint position, float height, uint jumps)

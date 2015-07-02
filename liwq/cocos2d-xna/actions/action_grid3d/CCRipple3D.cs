@@ -1,3 +1,4 @@
+using liwq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,8 @@ namespace cocos2d
         public void setPosition(CCPoint position)
         {
             m_position = position;
-            m_positionInPixels.x = position.x * Director.SharedDirector.ContentScaleFactor;
-            m_positionInPixels.y = position.y * Director.SharedDirector.ContentScaleFactor;
+            m_positionInPixels.X = position.X * Director.SharedDirector.ContentScaleFactor;
+            m_positionInPixels.Y = position.Y * Director.SharedDirector.ContentScaleFactor;
         }
 
         public float getAmplitude()
@@ -101,7 +102,7 @@ namespace cocos2d
                 {
                     ccVertex3F v = originalVertex(new ccGridSize(i, j));
                     CCPoint vect = CCPointExtension.ccpSub(m_positionInPixels, new CCPoint(v.x, v.y));
-                    float r = (float)Math.Sqrt((vect.x * vect.x + vect.y * vect.y));
+                    float r = (float)Math.Sqrt((vect.X * vect.X + vect.Y * vect.Y));
 
                     if (r < m_fRadius)
                     {

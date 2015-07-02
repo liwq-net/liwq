@@ -1,3 +1,4 @@
+using liwq;
 /*
  * Copyright (c) 2010-2012 cocos2d-x.org
  * cocos2d for iPhone: http://www.cocos2d-iphone.org
@@ -82,7 +83,7 @@ namespace cocos2d
             for (int i = 1; i < copyConfig.count(); ++i)
             {
                 CCPoint current = copyConfig.getControlPointAtIndex(i);
-                CCPoint diff = current.Sub(p);
+                CCPoint diff = current - p;
                 copyConfig.replaceControlPoint(diff, i);
 
                 p = current;
@@ -98,14 +99,14 @@ namespace cocos2d
             p = pReverse.getControlPointAtIndex(pReverse.count() - 1);
             pReverse.removeControlPointAtIndex(pReverse.count() - 1);
 
-            p = p.Neg();
+            p = -p;
             pReverse.insertControlPoint(p, 0);
 
             for (int i = 1; i < pReverse.count(); ++i)
             {
                 CCPoint current = pReverse.getControlPointAtIndex(i);
-                current = current.Neg();
-                CCPoint abs = current.Add(p);
+                current = -current;
+                CCPoint abs = current + p;
                 pReverse.replaceControlPoint(abs, i);
 
                 p = abs;
@@ -115,7 +116,7 @@ namespace cocos2d
         }
         public virtual void updatePosition(CCPoint newPos)
         {
-            Target.Position = newPos.Add(m_startPosition);
+            Target.Position = newPos + m_startPosition;
         }
 
         protected CCPoint m_startPosition;
