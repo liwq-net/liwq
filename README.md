@@ -1,8 +1,8 @@
 # liwq
-liwq是一套基于monogame的框架。同时适用于App以及游戏的开发。
+linux,ios,windows,quicker!
+liwq是一套基于monogame的跨平台框架,同时适用于开发软件或者游戏。
 框架参考cocos2d的设计，对引擎核心部分进行简化，把多余的去掉，把必须的补回来，简化代码编写，优化性能，添加WPF风格UI。
-主要工作内容如下：
-
+当前版本主要工作内容如下：
  * 1、重构所有代码，统一使用UI左上角坐标
  * 2、Director 与 AppDelegate合并一个"大总管"
  * 3、Texture，Sprite，SpriteFrame 合并
