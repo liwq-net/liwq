@@ -1,24 +1,4 @@
-/* 2dx复杂，不容易修改扩展,liwq改进包括
- * 简化引擎，把多余的去掉，把必须的补回来，简化代码编写，优化性能，添加WPF风格UI
- * 1、重构所有代码，统一使用UI左上角坐标
- * 2、Director 与 AppDelegate合并一个"大总管"
- * 3、Texture，Sprite，SpriteFrame 合并
- * 4、优化贴图性能，添加贴图动态合并功能（合成一张大贴图共用，发挥batch效能）。基于场景（node)的texture缓存，node释放，贴图释放
- * 5、废掉原来的menu等UI系统，废掉Layer，只基于Node以及上层的WPF风格UI（矢量控件）
- * 6、添加矢量字体以及高速的点阵字体（矢量字体选用stb ttf或者xmlreader方式的svg字体）
- * 7、保留 actions，particle system，scenes_transitions
- * 8、废弃xnb模式资源管理模式，支持ogg，png，gif,jpg，压缩贴图资源
- * 9、添加事件驱动模式（省电）
- * 10、actions 改为begin end连续函数控制
- * 11、支持xaml设计，支持metro风格控件
- * 12、.net风格的事件绑定模式
- * 12、3D模型支持（后期）
- * 13、XNAVG支持（后期）
- * 14、适配手机特有功能（震动，gps，webview，水平仪，相机调用）（后期)
- * 
- * 
- * 
- */
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input.Touch;
@@ -93,7 +73,7 @@ namespace cocos2d
         /// <summary>Callback by CCDirector for limit FPS</summary>
         public double AnimationInterval
         {
-            set { Game.TargetElapsedTime = TimeSpan.FromSeconds(value); }
+            set { this.Game.TargetElapsedTime = TimeSpan.FromSeconds(value); }
             get { return this.Game.TargetElapsedTime.Milliseconds / 1000.0; }
         }
 

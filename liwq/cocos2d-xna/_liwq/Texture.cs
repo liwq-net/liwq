@@ -8,7 +8,7 @@ namespace cocos2d
     //贴图缓存可以基于局部，node。或者基于全局，application
     public class Texture
     {
-        static int _name = 0;
+        static int _Name = 0;
         public int Name { get; protected set; }
 
         public Texture2D Texture2D { get; set; }
@@ -17,13 +17,13 @@ namespace cocos2d
         {
             this.Texture2D = new Texture2D(Application.SharedApplication.GraphicsDevice, width, height, false, SurfaceFormat.Color);
             this.Texture2D.SetData<byte>(data);
-            this.Name = _name++;
+            this.Name = _Name++;
         }
 
         public Texture(Texture2D texture2d)
         {
             this.Texture2D = texture2d;
-            this.Name = _name++;
+            this.Name = _Name++;
         }
 
         public Texture(string filename)
@@ -32,13 +32,13 @@ namespace cocos2d
             byte[] pixels = png.Decode(System.IO.File.OpenRead(filename));
             this.Texture2D = new Texture2D(Application.SharedApplication.GraphicsDevice, png.Width, png.Height, false, SurfaceFormat.Color);
             this.Texture2D.SetData<byte>(pixels);
-            this.Name = _name++;
+            this.Name = _Name++;
         }
 
         public Texture(int width, int hegiht)
         {
             this.Texture2D = new Texture2D(Application.SharedApplication.GraphicsDevice, width, hegiht);
-            this.Name = _name++;
+            this.Name = _Name++;
         }
 
         public int Width
