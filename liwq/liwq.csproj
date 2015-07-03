@@ -209,6 +209,10 @@
     <Compile Include="cocos2d-xna\support\TransformUtils.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="cocos2d-xna\_liwq\particle_nodes\CCParticleExamples.cs" />
+    <Compile Include="cocos2d-xna\_liwq\particle_nodes\CCParticleSystem.cs" />
+    <Compile Include="cocos2d-xna\_liwq\particle_nodes\CCParticleSystemPoint.cs" />
+    <Compile Include="cocos2d-xna\_liwq\particle_nodes\CCParticleSystemQuad.cs" />
     <Compile Include="cocos2d-xna\_liwq\PngDecoder.cs" />
     <Compile Include="cocos2d-xna\_liwq\Sprite.cs" />
     <Compile Include="cocos2d-xna\_liwq\sturcts\CCRect.cs" />
@@ -243,12 +247,19 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="zlib.net">
       <HintPath>cocos2d-xna\external lib\zlib.net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\android9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\particle_texture.plist">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\particle_texture.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico" />

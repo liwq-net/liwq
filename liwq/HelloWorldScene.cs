@@ -9,29 +9,35 @@ namespace HelloCocos2d
 
         public HelloCocos2dScene()
         {
-            var sp = new Sprite();
-            //sp.Texture = new Texture(colors, 100, 100);
-            sp.Texture = new Texture("Content/android9.png");
-            sp.Scale = 0.2f;
+            //var sp = new Sprite();
+            ////sp.Texture = new Texture(colors, 100, 100);
+            //sp.Texture = new Texture("Content/android9.png");
+            //sp.Scale = 0.2f;
 
-            var size = Director.SharedDirector.DisplaySize;
-            sp.Position = new CCPoint(size.Width / 2, size.Height / 2);
-            this.addChild(sp);
-
-
-            var act = new CCRotateBy();
-            act.initWithDuration(3.0f, 360);
-
-            var jump1 = CCJumpTo.actionWithDuration(5, new CCPoint(500, 0), 80, 10);
-            var jump2 = CCReverseTime.actionWithAction(jump1);
-            var quence = CCSequence.actionOneTwo(jump1, jump2);
-
-            var spawn = CCSpawn.actionOneTwo(act, quence);
+            //var size = Director.SharedDirector.DisplaySize;
+            //sp.Position = new CCPoint(size.Width / 2, size.Height / 2);
+            //this.addChild(sp);
 
 
-            var repeat = new CCRepeatForever();
-            repeat.initWithAction(spawn);
-            sp.RunAction(repeat);
+            //var act = new CCRotateBy();
+            //act.initWithDuration(3.0f, 360);
+
+            //var jump1 = CCJumpTo.actionWithDuration(5, new CCPoint(500, 0), 80, 10);
+            //var jump2 = CCReverseTime.actionWithAction(jump1);
+            //var quence = CCSequence.actionOneTwo(jump1, jump2);
+
+            //var spawn = CCSpawn.actionOneTwo(act, quence);
+
+
+            //var repeat = new CCRepeatForever();
+            //repeat.initWithAction(spawn);
+            //sp.RunAction(repeat);
+
+
+            CCParticleSnow particle = new CCParticleSnow();
+            //particle.initWithFile("particle_texture.plist");
+            particle.Position = Director.SharedDirector.DisplaySize.Center;
+            this.addChild(particle);
 
         }
 
