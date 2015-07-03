@@ -1,5 +1,5 @@
-using System;
 using System.Diagnostics;
+
 namespace cocos2d
 {
     /// <summary>
@@ -18,7 +18,6 @@ namespace cocos2d
             this._innerAction = action;
             this.Speed = speed;
         }
-
 
         public override void StartWithTarget(Node target)
         {
@@ -46,7 +45,6 @@ namespace cocos2d
         {
             return (CCActionInterval)new CCSpeed((CCActionInterval)this._innerAction.Reverse(), Speed);
         }
-
 
     }
 }

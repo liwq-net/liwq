@@ -39,9 +39,9 @@
     <Compile Include="cocos2d-xna\_liwq\actions\action\CCAction.cs" />
     <Compile Include="cocos2d-xna\_liwq\actions\action\CCFiniteTimeAction.cs" />
     <Compile Include="cocos2d-xna\_liwq\actions\action\CCFollow.cs" />
-    <Compile Include="cocos2d-xna\actions\action\CCSpeed.cs" />
-    <Compile Include="cocos2d-xna\actions\action_camera\CCActionCamera.cs" />
-    <Compile Include="cocos2d-xna\actions\action_camera\CCOrbitCamera.cs" />
+    <Compile Include="cocos2d-xna\_liwq\actions\action\CCSpeed.cs" />
+    <Compile Include="cocos2d-xna\_liwq\actions\action_camera\CCActionCamera.cs" />
+    <Compile Include="cocos2d-xna\_liwq\actions\action_camera\CCOrbitCamera.cs" />
     <Compile Include="cocos2d-xna\actions\action_ease\CCActionEase.cs" />
     <Compile Include="cocos2d-xna\actions\action_ease\CCEaseBackIn.cs" />
     <Compile Include="cocos2d-xna\actions\action_ease\CCEaseBackInOut.cs" />
@@ -257,7 +257,6 @@
     <Compile Include="cocos2d-xna\_liwq\sturcts\CCPoint.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="cocos2d-xna\_liwq\actions\action_camera\" />
     <Folder Include="cocos2d-xna\_liwq\actions\action_ease\" />
     <Folder Include="cocos2d-xna\_liwq\actions\action_grid3d\" />
     <Folder Include="cocos2d-xna\_liwq\actions\action_grid\" />

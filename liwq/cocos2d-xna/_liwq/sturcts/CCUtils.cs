@@ -277,5 +277,17 @@ namespace liwq
 
             return bRet;
         }
+
+        /// <summary>converts degrees to radians</summary>
+        public static float CC_DEGREES_TO_RADIANS(float angle)
+        {
+            return angle * 0.01745329252f; // PI / 180
+        }
+
+        /// <summary>converts radians to degrees</summary>
+        public static float CC_RADIANS_TO_DEGREES(float angle)
+        {
+            return angle * 57.29577951f; // PI * 180
+        }
     }
 }

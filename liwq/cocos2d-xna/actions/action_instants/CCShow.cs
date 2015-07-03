@@ -1,18 +1,9 @@
 ﻿using System;
+
 namespace cocos2d
 {
-    /** @brief Show the node
-    */
     public class CCShow : CCActionInstant
     {
-        public CCShow()
-        {
-        }
-
-        ~CCShow()
-        {
-        }
-
         public static new CCShow action()
         {
             CCShow pRet = new CCShow();

@@ -1,3 +1,4 @@
+using liwq;
 using System;
 
 namespace cocos2d
@@ -16,33 +17,19 @@ namespace cocos2d
         protected float _radX;
         protected float _radDeltaX;
 
-        public CCOrbitCamera()
-        {
-            this._radius = 0.0f;
-            this._deltaRadius = 0.0f;
-            this._angleZ = 0.0f;
-            this._deltaAngleZ = 0.0f;
-            this._angleX = 0.0f;
-            this._deltaAngleX = 0.0f;
-            this._radZ = 0.0f;
-            this._radDeltaZ = 0.0f;
-            this._radX = 0.0f;
-            this._radDeltaX = 0.0f;
-        }
-
         /// <summary>initializes a CCOrbitCamera action with radius, delta-radius,  z, deltaZ, x, deltaX </summary>
         public CCOrbitCamera(float t, float radius, float deltaRadius, float angleZ, float deltaAngleZ, float angleX, float deltaAngleX)
         {
             if (initWithDuration(t))
             {
-                _radius = radius;
-                _deltaRadius = deltaRadius;
-                _angleZ = angleZ;
-                _deltaAngleZ = deltaAngleZ;
-                _angleX = angleX;
-                _deltaAngleX = deltaAngleX;
-                _radDeltaZ = ccMacros.CC_DEGREES_TO_RADIANS(deltaAngleZ);
-                _radDeltaX = ccMacros.CC_DEGREES_TO_RADIANS(deltaAngleX);
+                this._radius = radius;
+                this._deltaRadius = deltaRadius;
+                this._angleZ = angleZ;
+                this._deltaAngleZ = deltaAngleZ;
+                this._angleX = angleX;
+                this._deltaAngleX = deltaAngleX;
+                this._radDeltaZ = CCUtils.CC_DEGREES_TO_RADIANS(deltaAngleZ);
+                this._radDeltaX = CCUtils.CC_DEGREES_TO_RADIANS(deltaAngleX);
             }
         }
 
@@ -55,9 +42,9 @@ namespace cocos2d
             float r; // radius
             float s;
 
-            CCCamera pCamera = Target.Camera;
-            pCamera.getEyeXYZ(out ex, out  ey, out ez);
-            pCamera.getCenterXYZ(out cx, out  cy, out  cz);
+            CCCamera camera = Target.Camera;
+            camera.getEyeXYZ(out ex, out  ey, out ez);
+            camera.getCenterXYZ(out cx, out  cy, out  cz);
 
             x = ex - cx;
             y = ey - cy;
@@ -81,31 +68,30 @@ namespace cocos2d
 
         public override void StartWithTarget(Node pTarget)
         {
-            startWithTargetUsedByCCOrbitCamera(pTarget);
-            //CCActionInterval::startWithTarget(pTarget);
+            base.startWithTargetUsedByCCOrbitCamera(pTarget);
 
             float r, zenith, azimuth;
             this.sphericalRadius(out r, out  zenith, out azimuth);
 
             if (float.IsNaN(_radius))
-                _radius = r;
+                this._radius = r;
             if (float.IsNaN(_angleZ))
-                _angleZ = ccMacros.CC_RADIANS_TO_DEGREES(zenith);
+                this._angleZ = CCUtils.CC_RADIANS_TO_DEGREES(zenith);
             if (float.IsNaN(_angleX))
-                _angleX = ccMacros.CC_RADIANS_TO_DEGREES(azimuth);
+                this._angleX = CCUtils.CC_RADIANS_TO_DEGREES(azimuth);
 
-            _radZ = ccMacros.CC_DEGREES_TO_RADIANS(_angleZ);
-            _radX = ccMacros.CC_DEGREES_TO_RADIANS(_angleX);
+            this._radZ = CCUtils.CC_DEGREES_TO_RADIANS(_angleZ);
+            this._radX = CCUtils.CC_DEGREES_TO_RADIANS(_angleX);
         }
 
         public override void Update(float dt)
         {
-            float r = (_radius + _deltaRadius * dt) * CCCamera.getZEye();
-            float za = _radZ + _radDeltaZ * dt;
-            float xa = _radX + _radDeltaX * dt;
-            float i = (float)Math.Sin(za) * (float)Math.Cos(xa) * r + _centerXOrig;
-            float j = (float)Math.Sin(za) * (float)Math.Sin(xa) * r + _centerYOrig;
-            float k = (float)Math.Cos(za) * r + _centerZOrig;
+            float r = (this._radius + this._deltaRadius * dt) * CCCamera.getZEye();
+            float za = this._radZ + this._radDeltaZ * dt;
+            float xa = this._radX + this._radDeltaX * dt;
+            float i = (float)Math.Sin(za) * (float)Math.Cos(xa) * r + this._centerXOrig;
+            float j = (float)Math.Sin(za) * (float)Math.Sin(xa) * r + this._centerYOrig;
+            float k = (float)Math.Cos(za) * r + this._centerZOrig;
             Target.Camera.setEyeXYZ(i, j, k);
         }
 

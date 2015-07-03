@@ -1017,7 +1017,7 @@ namespace cocos2d
             // build Affine transform manually
             if (Parent == null || Parent == m_pobBatchNode)
             {
-                float radians = -ccMacros.CC_DEGREES_TO_RADIANS(_rotation);
+                float radians = -CCUtils.CC_DEGREES_TO_RADIANS(_rotation);
                 float c = (float)Math.Cos(radians);
                 float s = (float)Math.Sin(radians);
 
@@ -1026,8 +1026,8 @@ namespace cocos2d
                     _positionInPixels.X, _positionInPixels.Y);
                 if (_skewX > 0 || _skewY > 0)
                 {
-                    CCAffineTransform skewMatrix = CCAffineTransform.CCAffineTransformMake(1.0f, (float)Math.Tan(ccMacros.CC_DEGREES_TO_RADIANS(_skewY)),
-                        (float)Math.Tan(ccMacros.CC_DEGREES_TO_RADIANS(_skewX)), 1.0f,
+                    CCAffineTransform skewMatrix = CCAffineTransform.CCAffineTransformMake(1.0f, (float)Math.Tan(CCUtils.CC_DEGREES_TO_RADIANS(_skewY)),
+                        (float)Math.Tan(CCUtils.CC_DEGREES_TO_RADIANS(_skewX)), 1.0f,
                         0.0f, 0.0f);
                     matrix = CCAffineTransform.CCAffineTransformConcat(skewMatrix, matrix);
                 }
@@ -1068,14 +1068,14 @@ namespace cocos2d
 
                     if ((int)prevHonor != 0 & (int)ccHonorParentTransform.CC_HONOR_PARENT_TRANSFORM_ROTATE != 0)
                     {
-                        newMatrix = CCAffineTransform.CCAffineTransformRotate(newMatrix, -ccMacros.CC_DEGREES_TO_RADIANS(tv.rotation));
+                        newMatrix = CCAffineTransform.CCAffineTransformRotate(newMatrix, -CCUtils.CC_DEGREES_TO_RADIANS(tv.rotation));
                     }
 
                     if ((int)prevHonor != 0 & (int)ccHonorParentTransform.CC_HONOR_PARENT_TRANSFORM_SKEW != 0)
                     {
                         CCAffineTransform skew = CCAffineTransform.CCAffineTransformMake(1.0f,
-                            (float)Math.Tan(ccMacros.CC_DEGREES_TO_RADIANS(tv.skew.Y)),
-                            (float)Math.Tan(ccMacros.CC_DEGREES_TO_RADIANS(tv.skew.X)), 1.0f, 0.0f, 0.0f);
+                            (float)Math.Tan(CCUtils.CC_DEGREES_TO_RADIANS(tv.skew.Y)),
+                            (float)Math.Tan(CCUtils.CC_DEGREES_TO_RADIANS(tv.skew.X)), 1.0f, 0.0f, 0.0f);
                         // apply the skew to the transform
                         newMatrix = CCAffineTransform.CCAffineTransformConcat(skew, newMatrix);
                     }

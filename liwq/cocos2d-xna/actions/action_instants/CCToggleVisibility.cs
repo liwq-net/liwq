@@ -1,23 +1,12 @@
 ﻿using System;
+
 namespace cocos2d
 {
-
-    /** @brief Toggles the visibility of a node
-    */
     public class CCToggleVisibility : CCActionInstant
     {
-        public CCToggleVisibility()
-        {
-        }
-
-        ~CCToggleVisibility()
-        {
-        }
-
         public static new CCToggleVisibility action()
         {
             CCToggleVisibility pRet = new CCToggleVisibility();
-
             return pRet;
         }
 
@@ -26,6 +15,5 @@ namespace cocos2d
             base.StartWithTarget(pTarget);
             pTarget.Visible = !pTarget.Visible;
         }
-
     }
 }

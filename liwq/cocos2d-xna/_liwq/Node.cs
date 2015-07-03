@@ -785,15 +785,15 @@ namespace cocos2d
 
                 if (_rotation != 0f)
                 {
-                    _transform = CCAffineTransform.CCAffineTransformRotate(_transform, -ccMacros.CC_DEGREES_TO_RADIANS(_rotation));
+                    _transform = CCAffineTransform.CCAffineTransformRotate(_transform, -CCUtils.CC_DEGREES_TO_RADIANS(_rotation));
                 }
 
                 if (_skewX != 0f || _skewY != 0f)
                 {
                     // create a skewed coordinate system
                     CCAffineTransform skew = CCAffineTransform.CCAffineTransformMake(1.0f,
-                        (float)Math.Tan(ccMacros.CC_DEGREES_TO_RADIANS(_skewY)),
-                          (float)Math.Tan(ccMacros.CC_DEGREES_TO_RADIANS(_skewX)), 1.0f, 0.0f, 0.0f);
+                        (float)Math.Tan(CCUtils.CC_DEGREES_TO_RADIANS(_skewY)),
+                          (float)Math.Tan(CCUtils.CC_DEGREES_TO_RADIANS(_skewX)), 1.0f, 0.0f, 0.0f);
                     // apply the skew to the transform
                     _transform = CCAffineTransform.CCAffineTransformConcat(skew, _transform);
                 }

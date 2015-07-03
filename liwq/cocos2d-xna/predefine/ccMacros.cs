@@ -31,21 +31,14 @@ namespace cocos2d
             return (float)rand.Next() / int.MaxValue;
         }
 
-        /** @def CC_DEGREES_TO_RADIANS
-            converts degrees to radians
-        */
-        public static float CC_DEGREES_TO_RADIANS(float angle)
-        {
-            return angle * 0.01745329252f; // PI / 180
-        }
 
-        /** @def CC_RADIANS_TO_DEGREES
-            converts radians to degrees
-        */
-        public static float CC_RADIANS_TO_DEGREES(float angle)
-        {
-            return angle * 57.29577951f; // PI * 180
-        }
+        ///** @def CC_RADIANS_TO_DEGREES
+        //    converts radians to degrees
+        //*/
+        //public static float CC_RADIANS_TO_DEGREES(float angle)
+        //{
+        //    return angle * 57.29577951f; // PI * 180
+        //}
 
         public static readonly float FLT_EPSILON = 1.192092896e-07F;
 
