@@ -1,9 +1,9 @@
 ﻿using liwq;
 using Microsoft.Xna.Framework;
 
-public class AppDelegate : Application
+public class App : Application
 {
-    public AppDelegate(Game game, GraphicsDeviceManager graphics)
+    public App(Game game, GraphicsDeviceManager graphics)
         : base(game, graphics)
     {
 

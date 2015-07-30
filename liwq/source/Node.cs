@@ -48,6 +48,7 @@ namespace liwq
         {
             this.Scale = 1.0f;
             this.Visible = true;
+            this.AnchorPoint = Point.AnchorCenter;
         }
 
         ~Node() { this.Dispose(); }

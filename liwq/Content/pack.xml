@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d5e729918a660f94a682c35f2a497be8:1/1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="pack.png" width="512" height="1024">
+    <sprite n="Stage01-PlatformFlat.png" x="504" y="794" w="6" h="44" r="y"/>
+    <sprite n="Stage01-PlatformFlatTrapdoor.png" x="2" y="1012" w="125" h="1"/>
+    <sprite n="Stage01-PlatformFlatWide.png" x="288" y="470" w="12" h="84" r="y"/>
+    <sprite n="background-star.png" x="2" y="873" w="126" h="120" oX="1" oY="3" oW="128" oH="128"/>
+    <sprite n="blazo-ball01.png" x="385" y="963" w="48" h="48" oX="8" oY="8" oW="64" oH="64"/>
+    <sprite n="blazo-ball02.png" x="385" y="913" w="48" h="48" oX="8" oY="8" oW="64" oH="64"/>
+    <sprite n="blazo-ball03.png" x="384" y="863" w="48" h="48" oX="8" oY="8" oW="64" oH="64"/>
+    <sprite n="blazo-ball04.png" x="359" y="813" w="48" h="48" oX="8" oY="8" oW="64" oH="64"/>
+    <sprite n="blazo-flameball.png" x="311" y="302" w="80" h="80" oX="11" oY="11" oW="100" oH="100"/>
+    <sprite n="blazo-sparks.png" x="448" y="113" w="10" h="10" oX="3" oY="3" oW="16" oH="16"/>
+    <sprite n="block-break-moving-big-squint.png" x="393" y="302" w="30" h="73" r="y"/>
+    <sprite n="block-break01-squint.png" x="305" y="454" w="44" h="44"/>
+    <sprite n="block-break01.png" x="258" y="976" w="44" h="44"/>
+    <sprite n="block-break02-squint.png" x="354" y="976" w="29" h="44" r="y"/>
+    <sprite n="block-break02.png" x="242" y="470" w="44" h="88"/>
+    <sprite n="block-break03-squint.png" x="198" y="870" w="28" h="88" r="y"/>
+    <sprite n="block-break03.png" x="320" y="256" w="88" h="44"/>
+    <sprite n="block-break04-squint.png" x="228" y="939" w="55" h="35"/>
+    <sprite n="block-spike01.png" x="242" y="560" w="58" h="60"/>
+    <sprite n="block-spike02.png" x="222" y="808" w="58" h="60"/>
+    <sprite n="bouncepad-arrow.png" x="282" y="831" w="41" h="37" r="y"/>
+    <sprite n="bouncepad-arrow02.png" x="302" y="550" w="41" h="37" r="y"/>
+    <sprite n="bouncepad-base.png" x="150" y="870" w="46" h="90" r="y"/>
+    <sprite n="bouncepad-top-02.png" x="222" y="472" w="18" h="100" r="y"/>
+    <sprite n="bouncepad-top.png" x="130" y="873" w="18" h="100" r="y"/>
+    <sprite n="breakblock-puff.png" x="473" y="637" w="32" h="32"/>
+    <sprite n="button-player-selected.png" x="2" y="212" w="89" h="269" r="y"/>
+    <sprite n="cannon-rim-green.png" x="491" y="309" w="14" h="42" r="y"/>
+    <sprite n="cannon-rim-red.png" x="279" y="754" w="14" h="42" r="y"/>
+    <sprite n="cannon-star-green.png" x="473" y="671" w="26" h="26"/>
+    <sprite n="cannon-star-red.png" x="473" y="699" w="24" h="24" oX="0" oY="1" oW="26" oH="26"/>
+    <sprite n="cannon-wheel.png" x="423" y="750" w="43" h="40" r="y"/>
+    <sprite n="cannon.png" x="132" y="808" w="88" h="60" r="y"/>
+    <sprite n="coin-rays.png" x="2" y="743" w="128" h="128"/>
+    <sprite n="coinsparkle.png" x="335" y="926" w="48" h="48"/>
+    <sprite n="confetti.png" x="130" y="975" w="18" h="30" oX="7" oY="1" oW="32" oH="32"/>
+    <sprite n="dec-back-04.png" x="460" y="113" w="50" h="63" r="y"/>
+    <sprite n="dec-front-01.png" x="302" y="500" w="41" h="48" oX="0" oY="1" oW="48" oH="43" r="y"/>
+    <sprite n="dec-front-02.png" x="228" y="870" w="54" h="67" r="y"/>
+    <sprite n="dec-front-03.png" x="216" y="976" w="40" h="46" r="y"/>
+    <sprite n="dec-front-04.png" x="304" y="976" w="48" h="40"/>
+    <sprite n="dec-front-05.png" x="416" y="792" w="42" h="39" r="y"/>
+    <sprite n="dec-front-06.png" x="427" y="132" w="28" h="30" r="y"/>
+    <sprite n="dec-front-07.png" x="352" y="582" w="56" h="54"/>
+    <sprite n="dec-front-08.png" x="448" y="2" w="62" h="62" oX="2" oY="0" oW="64" oH="62"/>
+    <sprite n="dec-front-09.png" x="325" y="831" w="32" h="37" oX="0" oY="1" oW="32" oH="39"/>
+    <sprite n="ember.png" x="285" y="926" w="48" h="48"/>
+    <sprite n="firethrow-trail-07.png" x="460" y="794" w="42" h="40" oX="0" oY="0" oW="42" oH="42"/>
+    <sprite n="firethrow-trail-07a.png" x="417" y="465" w="38" h="40" oX="1" oY="2" oW="42" oH="42" r="y"/>
+    <sprite n="firethrow-trail-16.png" x="453" y="836" w="42" h="32" oX="4" oY="0" oW="42" oH="42" r="y"/>
+    <sprite n="firethrow-trail-mega.png" x="411" y="516" w="42" h="42"/>
+    <sprite n="firethrow-trail-regular.png" x="476" y="870" w="34" h="42" oX="0" oY="6" oW="42" oH="42" r="y"/>
+    <sprite n="firethrow-trail-super.png" x="435" y="956" w="42" h="42"/>
+    <sprite n="firethrow-trail-turbo.png" x="457" y="428" w="40" h="40" oX="1" oY="2" oW="42" oH="42"/>
+    <sprite n="freezo-particle.png" x="468" y="750" w="42" h="42"/>
+    <sprite n="freezo-shard.png" x="460" y="247" w="50" h="60" oX="7" oY="2" oW="64" oH="64"/>
+    <sprite n="freezo-snowflake.png" x="417" y="421" w="38" h="42" oX="0" oY="1" oW="42" oH="42" r="y"/>
+    <sprite n="gameover-frameback-hd.png" x="295" y="705" w="64" h="64"/>
+    <sprite n="gameover-frameback.png" x="460" y="572" w="32" h="32"/>
+    <sprite n="gem-pickup.png" x="305" y="388" w="44" h="64" oX="10" oY="0" oW="64" oH="64"/>
+    <sprite n="glowball.png" x="455" y="538" w="32" h="32"/>
+    <sprite n="gravboots-particle-mega.png" x="434" y="870" w="40" h="40" oX="1" oY="1" oW="42" oH="42"/>
+    <sprite n="gravboots-particle-regular.png" x="409" y="833" w="42" h="28" oX="0" oY="7" oW="42" oH="42"/>
+    <sprite n="gravboots-particle-super.png" x="417" y="377" w="36" h="42" oX="0" oY="3" oW="42" oH="42" r="y"/>
+    <sprite n="gravboots-particle-turbo.png" x="435" y="912" w="38" h="42" oX="0" oY="0" oW="42" oH="42" r="y"/>
+    <sprite n="gsg_fb_close.png" x="479" y="980" w="29" h="29"/>
+    <sprite n="gsg_fb_close@2x.png" x="295" y="771" w="59" h="58" r="y"/>
+    <sprite n="gsg_fbicon.png" x="188" y="190" w="14" h="14"/>
+    <sprite n="info-background.png" x="406" y="252" w="2" h="2"/>
+    <sprite n="lucky-particle.png" x="361" y="700" w="60" h="60" oX="2" oY="2" oW="64" oH="64"/>
+    <sprite n="magnet-motes01.png" x="320" y="174" w="80" h="80"/>
+    <sprite n="magnet-motes02.png" x="223" y="388" w="80" h="80"/>
+    <sprite n="magnet-motes03.png" x="2" y="613" w="128" h="128"/>
+    <sprite n="magnet-motes04.png" x="130" y="975" w="18" h="30" oX="7" oY="1" oW="32" oH="32"/>
+    <sprite n="magnet-rays01.png" x="2" y="483" w="128" h="128"/>
+    <sprite n="magnet-rays02.png" x="93" y="342" w="128" h="128"/>
+    <sprite n="magnet-rays03.png" x="93" y="212" w="128" h="128"/>
+    <sprite n="magnet-rays04.png" x="318" y="2" w="128" h="128"/>
+    <sprite n="particle-blob.png" x="361" y="638" w="60" h="60" oX="2" oY="2" oW="64" oH="64"/>
+    <sprite n="particle-dustpuff.png" x="150" y="962" w="64" h="60" oX="0" oY="2" oW="64" oH="64"/>
+    <sprite n="particle-rock.png" x="479" y="948" w="28" h="30" oX="2" oY="1" oW="32" oH="32"/>
+    <sprite n="particle-star-hd.png" x="295" y="639" w="64" h="64"/>
+    <sprite n="particle-star.png" x="295" y="639" w="64" h="64"/>
+    <sprite n="pickup-rays01.png" x="2" y="483" w="128" h="128"/>
+    <sprite n="pickup-rays02.png" x="93" y="342" w="128" h="128"/>
+    <sprite n="pickup-rays03.png" x="93" y="212" w="128" h="128"/>
+    <sprite n="pickup-rays04.png" x="318" y="2" w="128" h="128"/>
+    <sprite n="plat-cog.png" x="302" y="589" w="48" h="48"/>
+    <sprite n="platform-endcap-a-02.png" x="445" y="178" w="64" h="67"/>
+    <sprite n="platform-hop-03.png" x="448" y="66" w="62" h="45"/>
+    <sprite n="player-bought-check.png" x="460" y="375" w="50" h="51"/>
+    <sprite n="player-new-badge.png" x="402" y="174" w="41" h="76" r="y"/>
+    <sprite n="powerup-rays.png" x="188" y="2" w="128" h="128"/>
+    <sprite n="smokepuff.png" x="410" y="252" w="48" h="48"/>
+    <sprite n="spark.png" x="457" y="504" w="32" h="32"/>
+    <sprite n="sparkle.png" x="457" y="470" w="32" h="32"/>
+    <sprite n="sparkle02.png" x="475" y="914" w="32" h="32"/>
+    <sprite n="stagesign-background.png" x="435" y="1000" w="22" h="22"/>
+    <sprite n="stagesign-post.png" x="315" y="132" w="110" h="40" r="y"/>
+    <sprite n="star-flare.png" x="132" y="472" w="88" h="122" oX="2" oY="36" oW="128" oH="128" r="y"/>
+    <sprite n="star-pop.png" x="223" y="296" w="86" h="90" oX="5" oY="3" oW="96" oH="96"/>
+    <sprite n="streak-alpha-blue.png" x="229" y="688" w="64" h="64"/>
+    <sprite n="streak-alpha-green.png" x="229" y="622" w="64" h="64"/>
+    <sprite n="streak-alpha-red.png" x="345" y="516" w="64" h="64"/>
+    <sprite n="streak-alpha-yellow.png" x="351" y="450" w="64" h="64"/>
+    <sprite n="streak-alpha.png" x="351" y="384" w="64" h="64"/>
+    <sprite n="streak.png" x="425" y="309" w="64" h="64"/>
+    <sprite n="trapdoor-arrow.png" x="460" y="606" w="27" h="29"/>
+    <sprite n="trapdoor-base.png" x="188" y="132" w="125" h="56"/>
+    <sprite n="trapdoor-gear.png" x="361" y="762" w="53" h="49" r="y"/>
+    <sprite n="trapdoor-top.png" x="2" y="995" w="125" h="15"/>
+    <sprite n="white-dot-hd.png" x="311" y="296" w="4" h="4"/>
+    <sprite n="white-dot.png" x="402" y="252" w="2" h="2"/>
+    <sprite n="worldsel-comingsoon.png" x="2" y="2" w="184" h="208" oX="1" oY="0" oW="186" oH="220"/>
+    <sprite n="xpbar-shield-01.png" x="423" y="694" w="48" h="54" oX="2" oY="1" oW="52" oH="56"/>
+    <sprite n="xpbar-shield-02.png" x="229" y="754" w="48" h="52" oX="2" oY="1" oW="52" oH="56"/>
+    <sprite n="xpbar-shield-03.png" x="423" y="638" w="48" h="54" oX="2" oY="1" oW="52" oH="56"/>
+    <sprite n="xpbar-shield-04-hd.png" x="223" y="190" w="95" h="104" oX="3" oY="3" oW="103" oH="110"/>
+    <sprite n="xpbar-shield-04.png" x="410" y="582" w="48" h="54" oX="2" oY="1" oW="52" oH="56"/>
+    <sprite n="xpbar-shield-05-hd.png" x="132" y="702" w="95" h="104" oX="3" oY="3" oW="103" oH="110"/>
+    <sprite n="xpbar-shield-05.png" x="334" y="870" w="48" h="54" oX="2" oY="1" oW="52" oH="56"/>
+    <sprite n="xpbar-shield-06-hd.png" x="132" y="596" w="95" h="104" oX="3" oY="3" oW="103" oH="110"/>
+    <sprite n="xpbar-shield-06.png" x="284" y="870" w="48" h="54" oX="2" oY="1" oW="52" oH="56"/>
+</TextureAtlas>

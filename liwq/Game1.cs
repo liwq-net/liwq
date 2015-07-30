@@ -17,7 +17,7 @@ namespace liwq
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            this.Components.Add(new AppDelegate(this, graphics));
+            this.Components.Add(new App(this, graphics));
         }
 
         /// <summary>
