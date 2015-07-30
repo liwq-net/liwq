@@ -42,7 +42,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="source\TextureFactory.cs" />
+    <Compile Include="source\SpriteFactory.cs" />
     <Compile Include="source\todo\actions\action\CCAction.cs" />
     <Compile Include="source\Application.cs" />
     <Compile Include="source\Node.cs" />

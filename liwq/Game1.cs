@@ -17,17 +17,7 @@ namespace liwq
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            //graphics.PreferMultiSampling = true;
-            //graphics.PreparingDeviceSettings += graphics_PreparingDeviceSettings;
-
-            AppDelegate app = new AppDelegate(this, graphics);
-            this.Components.Add(app);
-        }
-        void graphics_PreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
-        {
-            PresentationParameters pp = e.GraphicsDeviceInformation.PresentationParameters;
-            pp.MultiSampleCount = 4;
-            return;
+            this.Components.Add(new AppDelegate(this, graphics));
         }
 
         /// <summary>

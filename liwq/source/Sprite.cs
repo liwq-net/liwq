@@ -1,4 +1,5 @@
-﻿using liwq;
+﻿using System;
+using liwq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -39,14 +40,17 @@ namespace liwq
             this.IsRotate = isRotated;
         }
 
+        public Sprite Clone()
+        {
+            return new Sprite(this.Texture2D, this.SourceRectangle, this.IsRotate);
+        }
+
         public override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
 
             if (this.Texture2D != null)
             {
-                Application.SharedApplication.GraphicsDevice.SamplerStates[0] = SamplerState.LinearClamp;
-
                 Application.SharedApplication.SpriteBatch.Begin();
                 Application.SharedApplication.SpriteBatch.Draw(
                     this.Texture2D,
