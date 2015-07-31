@@ -625,6 +625,11 @@ namespace liwq
         {
             return new Vector3(point.X, point.Y, 0);
         }
+
+        public static Point Random()
+        {
+            return new Point(Utility.Random.Next((int)Application.SharedApplication.DesignSize.Width), Utility.Random.Next((int)Application.SharedApplication.DesignSize.Height));
+        }
     }
 
 }

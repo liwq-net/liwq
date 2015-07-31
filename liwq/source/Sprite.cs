@@ -21,8 +21,20 @@ namespace liwq
         public bool FlipX { get; set; }
         public bool FlipY { get; set; }
 
-        private void setTextureProperty(Rect? rect = null, bool isRotated = false, Size? unCropSize = null, Point? cropPosition = null)
+        public float Opacity { get; set; }
+        public Color Color { get; set; }
+
+        public override Size ContentSize
         {
+            get { return new Size(this.Texture2D.Width, this.Texture2D.Height); }
+            set { }
+        }
+
+        private void initDefaultProperty(Rect? rect = null, bool isRotated = false, Size? unCropSize = null, Point? cropPosition = null)
+        {
+            this.Opacity = 1.0f;
+            this.Color = Color.White;
+
             if (rect == null)
                 this.SourceRectangle = new Rect(0, 0, this.Texture2D.Width, this.Texture2D.Height);
             else
@@ -36,18 +48,18 @@ namespace liwq
         public Sprite(Texture2D texture2d, Rect? rect = null, bool isRotated = false, Size? unCropSize = null, Point? cropPosition = null)
         {
             this.Texture2D = texture2d;
-            this.setTextureProperty(rect, isRotated, unCropSize, cropPosition);
+            this.initDefaultProperty(rect, isRotated, unCropSize, cropPosition);
         }
         public Sprite(byte[] data, int width, int height, Rect? rect = null, bool isRotated = false, Size? unCropSize = null, Point? cropPosition = null)
         {
             this.Texture2D = new Texture2D(Application.SharedApplication.GraphicsDevice, width, height, false, SurfaceFormat.Color);
             this.Texture2D.SetData<byte>(data);
-            this.setTextureProperty(rect, isRotated, unCropSize, cropPosition);
+            this.initDefaultProperty(rect, isRotated, unCropSize, cropPosition);
         }
         public Sprite(string assetName, Rect? rect = null, bool isRotated = false, Size? unCropSize = null, Point? cropPosition = null)
         {
             this.Texture2D = Application.SharedApplication.Game.Content.Load<Texture2D>(assetName);
-            this.setTextureProperty(rect, isRotated, unCropSize, cropPosition);
+            this.initDefaultProperty(rect, isRotated, unCropSize, cropPosition);
         }
 
         public Sprite Clone()
@@ -58,7 +70,7 @@ namespace liwq
         public override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
-
+            
             if (this.Texture2D != null)
             {
                 Application.SharedApplication.SpriteBatch.Begin();
@@ -66,8 +78,8 @@ namespace liwq
                     this.Texture2D,
                     new Vector2(this.Position.X - this.CropPosition.X, this.Position.Y - this.CropPosition.Y),
                     this.SourceRectangle,
-                    Color.White,
-                    (this.Rotation + (this.IsRotate == true ? -90 : 0)) * (float)(Math.PI / 180),
+                    new Color(this.Color, this.Opacity * this.Color.A),        
+                    (this.Rotation + (this.IsRotate == true ? 270 : 0)) * (float)(Math.PI / 180),
                     new Vector2(this.AnchorPoint.X, this.AnchorPoint.Y),
                     new Vector2(this.ScaleX, this.ScaleY),
                     (this.FlipX == true ? SpriteEffects.FlipHorizontally : SpriteEffects.None) | (this.FlipY == true ? SpriteEffects.FlipVertically : SpriteEffects.None),

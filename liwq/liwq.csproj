@@ -51,6 +51,7 @@
     <Compile Include="source\sturcts\Rect.cs" />
     <Compile Include="source\sturcts\Size.cs" />
     <Compile Include="source\todo\CCUtils.cs" />
+    <Compile Include="source\Utility.cs" />
     <Compile Include="test\TestScene.cs" />
   </ItemGroup>
   <ItemGroup>

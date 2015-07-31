@@ -67,38 +67,26 @@ namespace liwq
             return false;
         }
 
-        public string saveReadString(XElement element, string name)
-        {
-            XAttribute attribe = element.Attribute(name);
-            if (attribe == null) return "";
-            else return attribe.Value;
-        }
-        public int saveReadInt(XElement element, string name)
-        {
-            XAttribute attribe = element.Attribute(name);
-            if (attribe == null) return 0;
-            else return int.Parse(attribe.Value);
-        }
         public void AddSpritePack(string packInfo, Texture2D texture)
         {
             //<TextureAtlas imagePath="pack.png" width="2047" height="1069">
             //    <sprite n="adventure-checkmark-box.png" x="1861" y="627" w="102" h="102" oX="2" oY="2" oW="106" oH="106" r="y"/>
             XElement textureElement = XElement.Parse(packInfo);
-            string name = saveReadString(textureElement, "imagePath");
+            string name = textureElement.SafeReadString("imagePath");
             this._textureCaches.Add(name, texture);
 
             foreach (var spriteElement in textureElement.Elements())
             {
-                string n = saveReadString(spriteElement, "n");
-                int x = saveReadInt(spriteElement, "x");
-                int y = saveReadInt(spriteElement, "y");
-                int w = saveReadInt(spriteElement, "w");
-                int h = saveReadInt(spriteElement, "h");
-                int oX = saveReadInt(spriteElement, "oX");
-                int oY = saveReadInt(spriteElement, "oY");
-                int oW = saveReadInt(spriteElement, "oW");
-                int oH = saveReadInt(spriteElement, "oH");
-                string r = saveReadString(spriteElement, "r");
+                string n = spriteElement.SafeReadString("n");
+                int x = spriteElement.SafeReadInt("x");
+                int y = spriteElement.SafeReadInt("y");
+                int w = spriteElement.SafeReadInt("w");
+                int h = spriteElement.SafeReadInt("h");
+                int oX = spriteElement.SafeReadInt("oX");
+                int oY = spriteElement.SafeReadInt("oY");
+                int oW = spriteElement.SafeReadInt("oW");
+                int oH = spriteElement.SafeReadInt("oH");
+                string r = spriteElement.SafeReadString("r");
                 Sprite sprite = new Sprite(texture, new Rect(x, y, w, h), r == "y", new Size(oW, oH), new Point(oX, oY));
                 this.AddSprite(n, sprite);
             }

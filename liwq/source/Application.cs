@@ -17,7 +17,7 @@ namespace liwq
             : base(game)
         {
             this.GraphicsDeviceManager = graphics;
-            Microsoft.Xna.Framework.Input.Touch.TouchPanel.EnabledGestures = GestureType.Tap;
+            TouchPanel.EnabledGestures = GestureType.Tap;
             this.ScreenScaleFactor = 1.0f;
 
             this.Game.Activated += (s, e) => { this.ApplicationWillEnterForeground(); };
@@ -49,10 +49,15 @@ namespace liwq
 
         public override void Update(GameTime gameTime)
         {
+            //if (Microsoft.Xna.Framework.Input.Keyboard.GetState().IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Right))
+            //{
+            //    System.Diagnostics.Debug.WriteLine("Right");
+            //}
             //if (Director.SharedDirector.IsPaused == false)
             //{
             //    CCScheduler.sharedScheduler().tick((float)gameTime.ElapsedGameTime.TotalSeconds);
             //}
+
             if (this.RunningScene != null)
             {
                 this.RunningScene.Update(gameTime);
